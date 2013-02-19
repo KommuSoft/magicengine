@@ -32,29 +32,29 @@ using OpenTK.Math;
 using OpenTK.Input;
 using OpenTK.Platform;
 
-using OOGL.Animation;
+/*using OOGL.Animation;
 using OOGL.Shaders;
 using OOGL.Textures;
 using OOGL;
 
 using OOGL.GUI;
 using OOGL.GUI.Abstract;
-using OOGL.GUI.VertexStructures;
+using OOGL.GUI.VertexStructures;*/
 
 namespace MagicEngine.UserInterface {
 
 	public class MainGameWindow : GameWindow {
-
+		/*
 		private Matrix4 perspective;
 		private double time = 0.0d;
 		private Model model;
-		private Controller controller;
+		private Controller controller;*/
 
 		public MainGameWindow () : base(800,600) {
 			this.Title = "MagicEngine";
 		}
 
-		protected override void OnLoad (EventArgs e) {
+		/*public override void OnLoad (EventArgs e) {
 			this.OnResize(e);
 			GL.ClearColor(Color.SkyBlue);
 			GL.Enable(EnableCap.DepthTest);
@@ -138,7 +138,7 @@ namespace MagicEngine.UserInterface {
 			GL.Vertex3(s, r, r);
 			GL.Vertex3(s, r, s);
 			GL.End();*/
-			model.Draw(controller, 0.025f, Matrix4.Rotate(Vector3.UnitY, Functions.PIF));
+		/*model.Draw(controller, 0.025f, Matrix4.Rotate(Vector3.UnitY, Functions.PIF));
 			GL.Flush();
 			this.SwapBuffers();
 			//base.OnRenderFrame(e);
@@ -155,7 +155,7 @@ namespace MagicEngine.UserInterface {
 			GL.MatrixMode(MatrixMode.Modelview);
 			GL.Viewport(0, 0, w, h);
 			base.OnResize(e);
-		}
+		}*/
 
 		public static int Main (string[] args) {
 			using(MainGameWindow mgw = new MainGameWindow()) {

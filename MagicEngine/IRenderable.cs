@@ -25,7 +25,7 @@ namespace MagicEngine.UserInterface {
 
 	public interface IRenderable {
 
-		void OnRenderFrame (FrameEventArgs e);
+		void OnRenderFrame (RenderFrameEventArgs e);
 	}
 
 }

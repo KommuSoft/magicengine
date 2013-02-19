@@ -44,30 +44,19 @@
     <Compile Include="ILoadableRenderable.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="SpellSkillProfile.cs" />
+    <Compile Include="GuidBase.cs" />
+    <Compile Include="Technology.cs" />
+    <Compile Include="Building.cs" />
+    <Compile Include="ITechnolable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="OpenTK.Compatibility">
-      <HintPath>libs\OpenTK.Compatibility.dll</HintPath>
-    </Reference>
     <Reference Include="OpenTK">
       <HintPath>libs\OpenTK.dll</HintPath>
     </Reference>
-    <Reference Include="OpenTK.GLControl">
-      <HintPath>libs\OpenTK.GLControl.dll</HintPath>
-    </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="OOGL">
-      <HintPath>libs\OOGL.dll</HintPath>
-    </Reference>
-    <Reference Include="GLGUI">
-      <HintPath>libs\GLGUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Ms3dLoader">
-      <HintPath>libs\Ms3dLoader.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

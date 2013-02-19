@@ -27,14 +27,14 @@ namespace MagicEngine {
 	using FunctionComponent = Tuple<int,double,double>;//mean,invsigma,mul
 
 	[XmlType("SpellSkillProfile")]
-	public class SpellSkillProfile {
+	public class SpellSkillProfile : Technology {
 
 		private List<FunctionComponent> elements = new List<FunctionComponent>();
 
 		[XmlIgnore]
 		public double this [int wavelength] {
 			get {
-				CalculateSkill(wavelength);
+				return CalculateSkill(wavelength);
 			}
 		}
 		[XmlArray("SkillDefinition")]
@@ -49,6 +49,12 @@ namespace MagicEngine {
 		}
 
 		public SpellSkillProfile () {
+		}
+		public SpellSkillProfile (string name) : base(name) {
+		}
+		public SpellSkillProfile (Guid guid) : base(guid) {
+		}
+		public SpellSkillProfile (Guid guid, string name) : base(guid) {
 		}
 
 		public double CalculateSkill (int wavelength) {

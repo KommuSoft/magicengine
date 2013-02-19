@@ -24,7 +24,8 @@ using System.Xml.Serialization;
 namespace MagicEngine.Information {
 
 	[XmlRoot("GameInformation")]
-	public class GameInformation {
+	public class GameInformation : ITec
+	hnolable {
 
 		[XmlArray("Cultures")]
 		[XmlArrayItem("Culture")]
@@ -32,9 +33,42 @@ namespace MagicEngine.Information {
 			get;
 			set;
 		}
+		[XmlArray("Spells")]
+		[XmlArrayItem("Spell")]
+		public List<Spell> Spells {
+			get;
+			set;
+		}
+		[XmlArray("Buildings")]
+		[XmlArrayItem("Building")]
+		public List<Building> Buildings {
+			get;
+			set;
+		}
+		[XmlArray("SpellSkillProfiles")]
+		[XmlArrayItem("SpellSkillProfile")]
+		public List<SpellSkillProfile> SpellSkillProfiles {
+			get;
+			set;
+		}
 
 		public GameInformation () {
 		}
+
+		#region ITechnolable implementation
+		public void Collect (List<Technology> technologies) {
+			foreach(Spell spell in this.Spells) {
+				technologies.Add(technologies);
+			}
+			foreach(Building build in this.Buildings) {
+				technologies.Add(build);
+			}
+			foreach(SpellSkillProfile ssp in this.SpellSkillProfiles) {
+				technologies.Add(ssp);
+			}
+		}
+		#endregion
+
 
 	}
 

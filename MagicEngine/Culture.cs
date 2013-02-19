@@ -19,12 +19,13 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
 	[XmlType("Culture")]
-	public class Culture {
+	public class Culture : GuidBase {
 
 		[XmlAttribute("Name")]
 		public string Name {
@@ -32,8 +33,24 @@ namespace MagicEngine.Information {
 			set;
 		}
 
-		public Culture () {
+		[XmlArray("SupportedTechnologies")]
+		[XmlArrayItem("Technology")]
+		public List<Guid> SupportedTechnologies {
+			get;
+			set;
 		}
+
+		public Culture () {
+			this.SupportedTechnologies = new List<Guid>();
+		}
+		public Culture (string name) : this() {
+			this.Name = name;
+		}
+
+		public void AddTechnology (Technology tech) {
+			this.SupportedTechnologies.Add(tech.Guid);
+		}
+
 	}
 }
 

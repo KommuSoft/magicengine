@@ -24,20 +24,10 @@ using System.Xml.Serialization;
 namespace MagicEngine {
 
 	[XmlType("Spell")]
-	public class Spell {
+	public class Spell : Technology {
 
-		private string name;
 		private int wavelength;
 
-		[XmlAttribute("Name")]
-		public string Name {
-			get {
-				return this.name;
-			}
-			set {
-				this.name = value;
-			}
-		}
 		[XmlAttribute("Wavelength")]
 		public int Wavelength {
 			get {
@@ -48,9 +38,9 @@ namespace MagicEngine {
 			}
 		}
 
-		public Spell () : this("Unknown",wavelength) {
+		public Spell () : this("Unknown",580) {
 		}
-		public Spell (string name, int wavelength) {
+		public Spell (string name, int wavelength) : base(name) {
 			this.Name = "Unknown";
 			this.Wavelength = wavelength;
 		}
