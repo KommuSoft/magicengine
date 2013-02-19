@@ -28,6 +28,21 @@ namespace MagicEngine {
 
 		private int wavelength;
 
+		[XmlAttribute("DescriptiveName")]
+		public string DescriptiveName {
+			get;
+			set;
+		}
+		[XmlAttribute("Pronunciation")]
+		public string Pronunciation {
+			get;
+			set;
+		}
+		[XmlAttribute("Description")]
+		public string Description {
+			get;
+			set;
+		}
 		[XmlAttribute("Wavelength")]
 		public int Wavelength {
 			get {

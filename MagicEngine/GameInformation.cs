@@ -18,14 +18,14 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
 	[XmlRoot("GameInformation")]
-	public class GameInformation : ITec
-	hnolable {
+	public class GameInformation : ITechnolable, IResolvable<Guid,Technology> {
 
 		[XmlArray("Cultures")]
 		[XmlArrayItem("Culture")]
@@ -68,6 +68,12 @@ namespace MagicEngine.Information {
 			}
 		}
 		#endregion
+		#region IResolvable implementation
+		public void Resolve (Dictionary<Guid, Technology> dictionary) {
+
+		}
+		#endregion
+
 
 
 	}

@@ -29,23 +29,38 @@ namespace MagicEngine {
 	[XmlType("SpellSkillProfile")]
 	public class SpellSkillProfile : Technology {
 
-		private List<FunctionComponent> elements = new List<FunctionComponent>();
-
 		[XmlIgnore]
 		public double this [int wavelength] {
 			get {
 				return CalculateSkill(wavelength);
 			}
 		}
+		public double this [Spell sp] {
+			get {
+				if(this.Spells.Contains(sp)) {
+					return this[sp.Wavelength];
+				}
+				else {
+					return double.NegativeInfinity;
+				}
+			}
+		}
 		[XmlArray("SkillDefinition")]
 		[XmlArrayItem("SkillElement")]
 		public List<FunctionComponent> Elements {
-			get {
-				return this.elements;
-			}
-			set {
-				this.elements = value;
-			}
+			get;
+			set;
+		}
+		[XmlArray("Spells")]
+		[XmlArrayItem("Spell")]
+		public List<Guid> SpellGuids {
+			get;
+			set;
+		}
+
+		public HashSet<Spell> Spells {
+			get;
+			set;
 		}
 
 		public SpellSkillProfile () {
@@ -59,11 +74,17 @@ namespace MagicEngine {
 
 		public double CalculateSkill (int wavelength) {
 			double sum = 0.0d;
-			foreach(FunctionComponent fc in this.elements) {
+			foreach(FunctionComponent fc in this.Elements) {
 				double x = fc.Item2*(wavelength-fc.Item1);
 				sum += fc.Item2*fc.Item3*Math.Exp(-0.5d*x*x);
 			}
 			return Math.Min(1.0d, sum/Math.Sqrt(2.0d*Math.PI));
+		}
+
+		public override void Resolve (Dictionary<System.Guid, Technology> dictionary) {
+			foreach(Guid g in this.SpellGuids) {
+				this.Spells.Add((Spell) dictionary[g]);
+			}
 		}
 
 	}

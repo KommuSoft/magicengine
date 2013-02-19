@@ -19,11 +19,12 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace MagicEngine {
 
-	public class Technology : GuidBase {
+	public class Technology : GuidBase, IResolvable<Guid,Technology> {
 
 		[XmlAttribute("Name")]
 		public string Name {
@@ -41,6 +42,12 @@ namespace MagicEngine {
 		}
 		public Technology (Guid guid) : base(guid) {
 		}
+
+		#region IResolvable implementation
+		public virtual void Resolve (Dictionary<Guid,Technology> dictionary) {
+		}
+		#endregion
+
 
 	}
 }

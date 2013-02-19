@@ -48,6 +48,7 @@
     <Compile Include="Technology.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="ITechnolable.cs" />
+    <Compile Include="IResolvable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

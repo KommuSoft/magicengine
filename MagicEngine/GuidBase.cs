@@ -38,6 +38,10 @@ namespace MagicEngine {
 			this.Guid = guid;
 		}
 
+		public override int GetHashCode () {
+			return base.GetHashCode()^this.Guid.GetHashCode();
+		}
+
 	}
 }
 
