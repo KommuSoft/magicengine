@@ -1,5 +1,5 @@
 //
-//  GameInformation.cs
+//  Spell.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -18,24 +18,43 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-using System.Collections.Generic;
+using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine.Information {
+namespace MagicEngine {
 
-	[XmlRoot("GameInformation")]
-	public class GameInformation {
+	[XmlType("Spell")]
+	public class Spell {
 
-		[XmlArray("Cultures")]
-		[XmlArrayItem("Culture")]
-		public List<Culture> Cultures {
-			get;
-			set;
+		private string name;
+		private int wavelength;
+
+		[XmlAttribute("Name")]
+		public string Name {
+			get {
+				return this.name;
+			}
+			set {
+				this.name = value;
+			}
+		}
+		[XmlAttribute("Wavelength")]
+		public int Wavelength {
+			get {
+				return this.wavelength;
+			}
+			set {
+				this.wavelength = Math.Max(380, Math.Min(780, value));
+			}
 		}
 
-		public GameInformation () {
+		public Spell () : this("Unknown",wavelength) {
+		}
+		public Spell (string name, int wavelength) {
+			this.Name = "Unknown";
+			this.Wavelength = wavelength;
 		}
 
 	}
-
 }
+
