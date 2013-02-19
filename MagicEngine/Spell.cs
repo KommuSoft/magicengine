@@ -49,15 +49,24 @@ namespace MagicEngine {
 				return this.wavelength;
 			}
 			set {
-				this.wavelength = Math.Max(380, Math.Min(780, value));
+				this.wavelength = Math.Max(350, Math.Min(780, value));
 			}
 		}
 
 		public Spell () : this("Unknown",580) {
 		}
 		public Spell (string name, int wavelength) : base(name) {
-			this.Name = "Unknown";
 			this.Wavelength = wavelength;
+		}
+		public Spell (string name, int wavelength, string pronunciation) : this(name,wavelength) {
+			this.Pronunciation = pronunciation;
+		}
+
+		public Spell (string name, int wavelength, string pronunciation, string descriptiveName) : this(name,wavelength,pronunciation) {
+			this.DescriptiveName = descriptiveName;
+		}
+		public Spell (string name, int wavelength, string pronunciation, string descriptiveName, string description) : this(name,wavelength,pronunciation,descriptiveName) {
+			this.Description = description;
 		}
 
 	}

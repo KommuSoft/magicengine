@@ -49,6 +49,7 @@
     <Compile Include="Building.cs" />
     <Compile Include="ITechnolable.cs" />
     <Compile Include="IResolvable.cs" />
+    <Compile Include="ColorUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
