@@ -55,6 +55,8 @@
     <Compile Include="AndFormula.cs" />
     <Compile Include="ISatisfiedWithSet.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="GaussianFunction.cs" />
+    <Compile Include="Maths.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

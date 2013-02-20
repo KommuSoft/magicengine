@@ -47,7 +47,7 @@ namespace MagicEngine.Information {
 		}
 		[XmlArray("SkillDefinition")]
 		[XmlArrayItem("SkillElement")]
-		public List<FunctionComponent> Elements {
+		public List<GaussianFunction> Elements {
 			get;
 			set;
 		}
@@ -57,7 +57,7 @@ namespace MagicEngine.Information {
 			get;
 			set;
 		}
-
+		[XmlIgnore]
 		public HashSet<Spell> Spells {
 			get;
 			set;
@@ -74,11 +74,11 @@ namespace MagicEngine.Information {
 
 		public double CalculateSkill (int wavelength) {
 			double sum = 0.0d;
-			foreach(FunctionComponent fc in this.Elements) {
-				double x = fc.Item2*(wavelength-fc.Item1);
-				sum += fc.Item2*fc.Item3*Math.Exp(-0.5d*x*x);
+			double wd = (double)wavelength;
+			foreach(GaussianFunction fc in this.Elements) {
+				sum += fc.Eval(wd);
 			}
-			return Math.Min(1.0d, sum/Math.Sqrt(2.0d*Math.PI));
+			return Math.Min(1.0d, sum);
 		}
 
 		public override void Resolve (Dictionary<Guid,Technology> dictionary) {

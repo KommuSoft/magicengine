@@ -54,6 +54,10 @@ namespace MagicEngine.Information {
 		}
 
 		public GameInformation () {
+			this.Cultures = new List<Culture>();
+			this.Spells = new List<Spell>();
+			this.Buildings = new List<Building>();
+			this.SpellSkillProfiles = new List<SpellSkillProfile>();
 		}
 
 		#region ITechnolable implementation

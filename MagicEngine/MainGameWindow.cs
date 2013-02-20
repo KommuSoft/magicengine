@@ -176,6 +176,7 @@ namespace MagicEngine.UserInterface {
 
 		public static int Main (string[] args) {
 			GameInformation gi = new GameInformation();
+			gi.WriteToFile("gameinformation.gi");
 			using(MainGameWindow mgw = new MainGameWindow()) {
 				mgw.Run();
 			}
