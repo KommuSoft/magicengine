@@ -35,6 +35,7 @@ namespace MagicEngine.Information {
 				return CalculateSkill(wavelength);
 			}
 		}
+		[XmlIgnore]
 		public double this [Spell sp] {
 			get {
 				if(this.Spells.Contains(sp)) {
@@ -64,12 +65,22 @@ namespace MagicEngine.Information {
 		}
 
 		public SpellSkillProfile () {
+			this.initialize();
 		}
 		public SpellSkillProfile (string name) : base(name) {
+			this.initialize();
 		}
 		public SpellSkillProfile (Guid guid) : base(guid) {
+			this.initialize();
 		}
 		public SpellSkillProfile (Guid guid, string name) : base(guid) {
+			this.initialize();
+		}
+
+		private void initialize () {
+			this.Spells = new HashSet<Spell>();
+			this.SpellGuids = new List<Guid>();
+			this.Elements = new List<GaussianFunction>();
 		}
 
 		public double CalculateSkill (int wavelength) {

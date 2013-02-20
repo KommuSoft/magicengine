@@ -34,6 +34,8 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		public AndFormula () : this (new T[0x00]) {
+		}
 		public AndFormula (params T[] items) : this((IEnumerable<T>) items) {
 		}
 		public AndFormula (IEnumerable<T> items) {

@@ -38,14 +38,17 @@ namespace MagicEngine.Information {
 		}
 
 		public Technology () {
+			this.Prerequirements = new DNFormula<Guid>();
 		}
-		public Technology (string name) {
+		public Technology (string name) : this() {
 			this.Name = name;
 		}
 		public Technology (Guid guid, string name) : base(guid) {
 			this.Name = name;
+			this.Prerequirements = new DNFormula<Guid>();
 		}
 		public Technology (Guid guid) : base(guid) {
+			this.Prerequirements = new DNFormula<Guid>();
 		}
 
 		#region IResolvable implementation

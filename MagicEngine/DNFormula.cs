@@ -34,6 +34,8 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		public DNFormula () : this(new T[0x00]) {
+		}
 		public DNFormula (params AndFormula<T>[] andFormulas) {
 		}
 		public DNFormula (IEnumerable<AndFormula<T>> andFormulas) {
