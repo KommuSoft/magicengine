@@ -28,7 +28,6 @@ using System.IO;
 
 using OpenTK;
 using OpenTK.Graphics;
-using OpenTK.Math;
 using OpenTK.Input;
 using OpenTK.Platform;
 
@@ -44,17 +43,17 @@ using OOGL.GUI.VertexStructures;*/
 namespace MagicEngine.UserInterface {
 
 	public class MainGameWindow : GameWindow {
-		/*
+
 		private Matrix4 perspective;
 		private double time = 0.0d;
-		private Model model;
+		/*private Model model;
 		private Controller controller;*/
 
 		public MainGameWindow () : base(800,600) {
 			this.Title = "MagicEngine";
 		}
 
-		/*public override void OnLoad (EventArgs e) {
+		protected override void OnLoad (EventArgs e) {
 			this.OnResize(e);
 			GL.ClearColor(Color.SkyBlue);
 			GL.Enable(EnableCap.DepthTest);
@@ -81,24 +80,41 @@ namespace MagicEngine.UserInterface {
 			GL.Enable(EnableCap.ColorMaterial);
 			GL.Enable(EnableCap.CullFace);
 
-			Ms3dLoader.File ms3dFile = new Ms3dLoader.File(ResourceLocator.GetFullPath("Models/Beta_Kamujin/Beta_Kamujin.ms3d"));
+			/*Ms3dLoader.File ms3dFile = new Ms3dLoader.File(ResourceLocator.GetFullPath("Models/Beta_Kamujin/Beta_Kamujin.ms3d"));
 			Sample[] tracks = Sample.Load(ResourceLocator.GetFullPath("Models/Beta_Kamujin/Beta_Kamujin.animations"));
 			ShaderProgram modelShader = new ShaderProgram(ResourceLocator.GetFullPath("Shaders/skeletalAnimation.vs"), ResourceLocator.GetFullPath("Shaders/skeletalAnimation.fs"));
 			this.model = ms3dFile.ToModel(modelShader, tracks);
-			this.controller = new Controller(model);
+			ths.controller = new Controller(model);*/
 
 			base.OnLoad(e);
 		}
 
 		protected override void OnRenderFrame (FrameEventArgs e) {
+			base.OnRenderFrame(e);
 			GL.Clear(ClearBufferMask.ColorBufferBit|ClearBufferMask.DepthBufferBit);
 			GL.LoadIdentity();
 			time += 30.0d*e.Time;
 			GL.Translate(0.0d, 0.0d, -3.0d);
-			GL.Rotate(time, 0.0d, 1.0d, 0.0d);
-			GL.Rotate(0.1d*time, 1.0d, 0.0d, 0.0d);
-			/*GL.Begin(BeginMode.Quads);
-			double r = 0.25d;
+			//GL.Rotate(time, 0.0d, 1.0d, 0.0d);
+			//GL.Rotate(0.1d*time, 1.0d, 0.0d, 0.0d);
+			GL.Begin(BeginMode.Quads);
+			GL.Normal3(0.0d, 0.0d, 1.0d);
+			uint c;
+			//GL.Color3(Color.Goldenrod);
+			double dx = 1.0d/215.0d;
+			for(int i = 350, j = -215; i < 780; i++,j++) {
+				c = ColorUtils.FromWavelength(i);
+				GL.Color3((byte)(c>>0x10), (byte)((c>>0x08)&0xff), (byte)(c&0xff));
+				GL.Vertex3(dx*j, -0.5d, 0.25d);
+				//ColorUtils.FromWavelength(i+1);
+				//GL.Color3(ref c);
+				GL.Vertex3(dx*j+dx, -0.5d, 0.25d);
+				GL.Vertex3(dx*j+dx, 0.5d, 0.25d);
+				//c = ColorUtils.FromWavelength(i);
+				//GL.Color3(ref c);
+				GL.Vertex3(dx*j, 0.5d, 0.25d);
+			}//*/
+			/*double r = 0.25d;
 			double s = -0.25d;
 			GL.Color3(Color.Goldenrod);
 			GL.Normal3(0.0d, 0.0d, 1.0d);
@@ -136,12 +152,11 @@ namespace MagicEngine.UserInterface {
 			GL.Vertex3(s, s, s);
 			GL.Vertex3(s, s, r);
 			GL.Vertex3(s, r, r);
-			GL.Vertex3(s, r, s);
-			GL.End();*/
-		/*model.Draw(controller, 0.025f, Matrix4.Rotate(Vector3.UnitY, Functions.PIF));
+			GL.Vertex3(s, r, s);//*/
+			GL.End();
+			/*model.Draw(controller, 0.025f, Matrix4.Rotate(Vector3.UnitY, Functions.PIF));*/
 			GL.Flush();
 			this.SwapBuffers();
-			//base.OnRenderFrame(e);
 		}
 
 		protected override void OnResize (EventArgs e) {
@@ -149,13 +164,13 @@ namespace MagicEngine.UserInterface {
 			int h = this.Height;
 			double ratio = (double)w/h;
 			GL.MatrixMode(MatrixMode.Projection);
-			this.perspective = Matrix4.CreatePerspectiveFieldOfView((float)(Math.PI/3.0d), (float)ratio, 1.0f, 1000.0f);
+			this.perspective = Matrix4.Perspective((float)(Math.PI/3.0d), (float)ratio, 1.0f, 1000.0f);
 			GL.LoadIdentity();
 			GL.MultMatrix(ref perspective);
 			GL.MatrixMode(MatrixMode.Modelview);
 			GL.Viewport(0, 0, w, h);
 			base.OnResize(e);
-		}*/
+		}
 
 		public static int Main (string[] args) {
 			using(MainGameWindow mgw = new MainGameWindow()) {

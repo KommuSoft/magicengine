@@ -57,8 +57,14 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="OpenTK">
-      <HintPath>libs\OpenTK.dll</HintPath>
+      <HintPath>lib\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="OpenTK.Compatibility">
+      <HintPath>lib\OpenTK.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>lib\OpenTK.GLControl.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

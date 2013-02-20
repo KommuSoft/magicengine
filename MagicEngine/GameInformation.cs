@@ -20,6 +20,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
@@ -57,24 +58,43 @@ namespace MagicEngine.Information {
 
 		#region ITechnolable implementation
 		public void Collect (List<Technology> technologies) {
+			technologies.AddRange(this.GetTechnologies());
+		}
+		#endregion
+		public IEnumerable<Technology> GetTechnologies () {
 			foreach(Spell spell in this.Spells) {
-				technologies.Add(technologies);
+				yield return spell;
 			}
 			foreach(Building build in this.Buildings) {
-				technologies.Add(build);
+				yield return build;
 			}
 			foreach(SpellSkillProfile ssp in this.SpellSkillProfiles) {
-				technologies.Add(ssp);
+				yield return ssp;
+			}
+		}
+		public void Resolve () {
+			List<Technology> alltechs = new List<Technology>();
+			this.Collect(alltechs);
+			Dictionary<Guid,Technology> techdic = new Dictionary<Guid, Technology>(alltechs.Count);
+			foreach(Technology tech in alltechs) {
+				techdic.Add(tech.Guid, tech);
+			}
+			this.Resolve(techdic);
+		}
+		#region IResolvable implementation
+		public void Resolve (Dictionary<Guid, Technology> dictionary) {
+			foreach(Technology tech in this.GetTechnologies()) {
+				tech.Resolve(dictionary);
 			}
 		}
 		#endregion
-		#region IResolvable implementation
-		public void Resolve (Dictionary<Guid, Technology> dictionary) {
 
+		public static GameInformation ReadFromStream (Stream s) {
+			XmlSerializer ser = new XmlSerializer(typeof(GameInformation));
+			GameInformation gi = (GameInformation)ser.Deserialize(s);
+			gi.Resolve();
+			return gi;
 		}
-		#endregion
-
-
 
 	}
 

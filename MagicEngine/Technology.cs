@@ -24,7 +24,7 @@ using System.Xml.Serialization;
 
 namespace MagicEngine {
 
-	public class Technology : GuidBase, IResolvable<Guid,Technology> {
+	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable {
 
 		[XmlAttribute("Name")]
 		public string Name {
@@ -47,6 +47,11 @@ namespace MagicEngine {
 		public virtual void Resolve (Dictionary<Guid,Technology> dictionary) {
 		}
 		#endregion
+		#region ITechnolable implementation
+		public virtual void Collect (List<Technology> technologies) {
+		}
+		#endregion
+
 
 
 	}
