@@ -1,5 +1,5 @@
 //
-//  Technology.cs
+//  AndFormula.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -24,45 +24,31 @@ using System.Xml.Serialization;
 
 namespace MagicEngine {
 
-	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
+	[XmlType("AndFormula")]
+	public class AndFormula<T> : ISatisfiedWithSet<T> {
 
-		[XmlAttribute("Name")]
-		public string Name {
+		[XmlArray("Items")]
+		[XmlArrayItem("Item")]
+		public List<T> Items {
 			get;
 			set;
 		}
 
-		public DNFormula<Guid> Prerequirements {
-			get;
-			set;
+		public AndFormula (params T[] items) : this((IEnumerable<T>) items) {
 		}
-
-		public Technology () {
+		public AndFormula (IEnumerable<T> items) {
+			this.Items = new List<T>();
+			this.Items.AddRange(items);
 		}
-		public Technology (string name) {
-			this.Name = name;
-		}
-		public Technology (Guid guid, string name) : base(guid) {
-			this.Name = name;
-		}
-		public Technology (Guid guid) : base(guid) {
-		}
-
-		#region IResolvable implementation
-		public virtual void Resolve (Dictionary<Guid,Technology> dictionary) {
-			if(this.Prerequirements == null) {
-				this.Prerequirements = new DNFormula<Guid>();
-			}
-		}
-		#endregion
-		#region ITechnolable implementation
-		public virtual void Collect (List<Technology> technologies) {
-		}
-		#endregion
 
 		#region ISatisfiedWithSet implementation
-		public bool SatisfiedWithSet (ICollection<Guid> collection) {
-			return this.Prerequirements.SatisfiedWithSet(collection);
+		public bool SatisfiedWithSet (ICollection<T> collection) {
+			foreach(T item in this.Items) {
+				if(!collection.Contains(item)) {
+					return false;
+				}
+			}
+			return true;
 		}
 		#endregion
 

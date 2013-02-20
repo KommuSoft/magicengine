@@ -81,9 +81,10 @@ namespace MagicEngine {
 			return Math.Min(1.0d, sum/Math.Sqrt(2.0d*Math.PI));
 		}
 
-		public override void Resolve (Dictionary<System.Guid, Technology> dictionary) {
+		public override void Resolve (Dictionary<Guid,Technology> dictionary) {
+			base.Resolve(dictionary);
 			foreach(Guid g in this.SpellGuids) {
-				this.Spells.Add((Spell) dictionary[g]);
+				this.Spells.Add((Spell)dictionary[g]);
 			}
 		}
 
