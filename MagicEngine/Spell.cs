@@ -21,7 +21,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	[XmlType("Spell")]
 	public class Spell : Technology {

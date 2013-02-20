@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	[XmlType("AndFormula")]
 	public class AndFormula<T> : ISatisfiedWithSet<T> {

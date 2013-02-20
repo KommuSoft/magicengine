@@ -26,6 +26,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.IO;
 
+using MagicEngine.Information;
+
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Input;
@@ -173,6 +175,7 @@ namespace MagicEngine.UserInterface {
 		}
 
 		public static int Main (string[] args) {
+			GameInformation gi = new GameInformation();
 			using(MainGameWindow mgw = new MainGameWindow()) {
 				mgw.Run();
 			}

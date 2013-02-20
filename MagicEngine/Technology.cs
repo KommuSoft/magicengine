@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
 

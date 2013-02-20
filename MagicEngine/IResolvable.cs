@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	public interface IResolvable<TKey,TValue> {
 

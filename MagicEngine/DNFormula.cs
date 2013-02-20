@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	[XmlType("DNFormula")]
 	public class DNFormula<T> : ISatisfiedWithSet<T> {

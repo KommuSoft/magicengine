@@ -21,7 +21,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 
 	public class GuidBase {
 
