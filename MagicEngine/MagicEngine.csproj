@@ -50,6 +50,7 @@
     <Compile Include="ITechnolable.cs" />
     <Compile Include="IResolvable.cs" />
     <Compile Include="ColorUtils.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

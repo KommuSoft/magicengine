@@ -88,12 +88,19 @@ namespace MagicEngine.Information {
 			}
 		}
 		#endregion
-
+		public static GameInformation ReadFromFile (string filename) {
+			return Utils.ReadFromFileCallBack(filename, ReadFromStream);
+		}
 		public static GameInformation ReadFromStream (Stream s) {
-			XmlSerializer ser = new XmlSerializer(typeof(GameInformation));
-			GameInformation gi = (GameInformation)ser.Deserialize(s);
+			GameInformation gi = Utils.XmlDeserialize<GameInformation>(s);
 			gi.Resolve();
 			return gi;
+		}
+		public void WriteToStream (Stream s) {
+			Utils.XmlSerialize<GameInformation>(s, this);
+		}
+		public void WriteToFile (string filename) {
+			Utils.WriteToFileCallBack(filename, this, Utils.XmlSerialize<GameInformation>);
 		}
 
 	}
