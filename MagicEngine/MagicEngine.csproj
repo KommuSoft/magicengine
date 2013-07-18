@@ -69,6 +69,8 @@
     <Compile Include="IName.cs" />
     <Compile Include="NameGeneratorGroup.cs" />
     <Compile Include="ReplaceRegex.cs" />
+    <Compile Include="NameGuidBase.cs" />
+    <Compile Include="TechnologyType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

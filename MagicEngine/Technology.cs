@@ -24,36 +24,39 @@ using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
-	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid>,IName {
+	public class Technology : NameGuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
 
-		private string name;
-
-		public string Name {
-			get {
-				return this.name;
-			}
-			set {
-				this.name = value;
-			}
-		}
-
+		[XmlElement("Prerequirements")]
 		public DNFormula<Guid> Prerequirements {
 			get;
 			set;
 		}
 
-		public Technology () {
-			this.Prerequirements = new DNFormula<Guid> ();
+		[XmlAttribute("Type")]
+		public TechnologyType Type {
+			get;
+			set;
 		}
-		public Technology (string name) : this() {
-			this.Name = name;
-		}
-		public Technology (Guid guid, string name) : base(guid) {
-			this.Name = name;
+
+		public Technology (TechnologyType type) {
 			this.Prerequirements = new DNFormula<Guid> ();
+			this.Type = type;
 		}
-		public Technology (Guid guid) : base(guid) {
+		public Technology (string name, TechnologyType type) : base(name) {
 			this.Prerequirements = new DNFormula<Guid> ();
+			this.Type = type;
+		}
+		public Technology (Guid guid, string name, TechnologyType type) : base(guid,name) {
+			this.Prerequirements = new DNFormula<Guid> ();
+			this.Type = type;
+		}
+		public Technology (string name, Guid guid, TechnologyType type) : base(name,guid) {
+			this.Prerequirements = new DNFormula<Guid> ();
+			this.Type = type;
+		}
+		public Technology (Guid guid, TechnologyType type) : base(guid) {
+			this.Prerequirements = new DNFormula<Guid> ();
+			this.Type = type;
 		}
 
 		#region IResolvable implementation

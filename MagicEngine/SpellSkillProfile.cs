@@ -27,21 +27,20 @@ namespace MagicEngine.Information {
 	using FunctionComponent = Tuple<int,double,double>;//mean,invsigma,mul
 
 	[XmlType("SpellSkillProfile")]
-	public class SpellSkillProfile : Technology {
+	public class SpellSkillProfile : NameGuidBase {
 
 		[XmlIgnore]
 		public double this [int wavelength] {
 			get {
-				return CalculateSkill(wavelength);
+				return CalculateSkill (wavelength);
 			}
 		}
 		[XmlIgnore]
 		public double this [Spell sp] {
 			get {
-				if(this.Spells.Contains(sp)) {
-					return this[sp.Wavelength];
-				}
-				else {
+				if (this.Spells.Contains (sp)) {
+					return this [sp.Wavelength];
+				} else {
 					return double.NegativeInfinity;
 				}
 			}
@@ -65,38 +64,38 @@ namespace MagicEngine.Information {
 		}
 
 		public SpellSkillProfile () {
-			this.initialize();
+			this.initialize ();
 		}
 		public SpellSkillProfile (string name) : base(name) {
-			this.initialize();
+			this.initialize ();
 		}
 		public SpellSkillProfile (Guid guid) : base(guid) {
-			this.initialize();
+			this.initialize ();
 		}
 		public SpellSkillProfile (Guid guid, string name) : base(guid) {
-			this.initialize();
+			this.initialize ();
 		}
 
 		private void initialize () {
-			this.Spells = new HashSet<Spell>();
-			this.SpellGuids = new List<Guid>();
-			this.Elements = new List<GaussianFunction>();
+			this.Spells = new HashSet<Spell> ();
+			this.SpellGuids = new List<Guid> ();
+			this.Elements = new List<GaussianFunction> ();
 		}
 
 		public double CalculateSkill (int wavelength) {
 			double sum = 0.0d;
 			double wd = (double)wavelength;
-			foreach(GaussianFunction fc in this.Elements) {
-				sum += fc.Eval(wd);
+			foreach (GaussianFunction fc in this.Elements) {
+				sum += fc.Eval (wd);
 			}
-			return Math.Min(1.0d, sum);
+			return Math.Min (1.0d, sum);
 		}
 
-		public override void Resolve (Dictionary<Guid,Technology> dictionary) {
-			base.Resolve(dictionary);
-			foreach(Guid g in this.SpellGuids) {
-				this.Spells.Add((Spell)dictionary[g]);
-			}
+		public void Resolve (Dictionary<Guid,Technology> dictionary) {
+			base.Resolve (dictionary);
+			/*foreach (Guid g in this.SpellGuids) {
+				this.Spells.Add ((Spell)dictionary [g]);
+			}*/
 		}
 
 	}

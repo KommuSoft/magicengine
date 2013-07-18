@@ -24,7 +24,7 @@ using System.Xml.Serialization;
 namespace MagicEngine.Information {
 
 	[XmlType("Spell")]
-	public class Spell : Technology {
+	public class Spell : NameGuidBase {
 
 		private int wavelength;
 
@@ -49,7 +49,7 @@ namespace MagicEngine.Information {
 				return this.wavelength;
 			}
 			set {
-				this.wavelength = Math.Max(350, Math.Min(780, value));
+				this.wavelength = Math.Max (350, Math.Min (780, value));
 			}
 		}
 

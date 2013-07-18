@@ -73,7 +73,7 @@ namespace MagicEngine.Information {
 		}
 		#endregion
 		public IEnumerable<Technology> GetTechnologies () {
-			foreach (Spell spell in this.Spells) {
+			/*foreach (Spell spell in this.Spells) {
 				yield return spell;
 			}
 			foreach (Building build in this.Buildings) {
@@ -81,7 +81,8 @@ namespace MagicEngine.Information {
 			}
 			foreach (SpellSkillProfile ssp in this.SpellSkillProfiles) {
 				yield return ssp;
-			}
+			}*/
+			yield break;
 		}
 		public void Resolve () {
 			List<Technology> alltechs = new List<Technology> ();
