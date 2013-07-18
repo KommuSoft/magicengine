@@ -53,58 +53,65 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		[XmlArray("Resources")]
+		[XmlArrayItem("Resource")]
+		public List<Resource> Resources {
+			get;
+			set;
+		}
+
 		public GameInformation () {
-			this.Cultures = new List<Culture>();
-			this.Spells = new List<Spell>();
-			this.Buildings = new List<Building>();
-			this.SpellSkillProfiles = new List<SpellSkillProfile>();
+			this.Cultures = new List<Culture> ();
+			this.Spells = new List<Spell> ();
+			this.Buildings = new List<Building> ();
+			this.SpellSkillProfiles = new List<SpellSkillProfile> ();
 		}
 
 		#region ITechnolable implementation
 		public void Collect (List<Technology> technologies) {
-			technologies.AddRange(this.GetTechnologies());
+			technologies.AddRange (this.GetTechnologies ());
 		}
 		#endregion
 		public IEnumerable<Technology> GetTechnologies () {
-			foreach(Spell spell in this.Spells) {
+			foreach (Spell spell in this.Spells) {
 				yield return spell;
 			}
-			foreach(Building build in this.Buildings) {
+			foreach (Building build in this.Buildings) {
 				yield return build;
 			}
-			foreach(SpellSkillProfile ssp in this.SpellSkillProfiles) {
+			foreach (SpellSkillProfile ssp in this.SpellSkillProfiles) {
 				yield return ssp;
 			}
 		}
 		public void Resolve () {
-			List<Technology> alltechs = new List<Technology>();
-			this.Collect(alltechs);
-			Dictionary<Guid,Technology> techdic = new Dictionary<Guid, Technology>(alltechs.Count);
-			foreach(Technology tech in alltechs) {
-				techdic.Add(tech.Guid, tech);
+			List<Technology> alltechs = new List<Technology> ();
+			this.Collect (alltechs);
+			Dictionary<Guid,Technology> techdic = new Dictionary<Guid, Technology> (alltechs.Count);
+			foreach (Technology tech in alltechs) {
+				techdic.Add (tech.Guid, tech);
 			}
-			this.Resolve(techdic);
+			this.Resolve (techdic);
 		}
 		#region IResolvable implementation
 		public void Resolve (Dictionary<Guid, Technology> dictionary) {
-			foreach(Technology tech in this.GetTechnologies()) {
-				tech.Resolve(dictionary);
+			foreach (Technology tech in this.GetTechnologies()) {
+				tech.Resolve (dictionary);
 			}
 		}
 		#endregion
 		public static GameInformation ReadFromFile (string filename) {
-			return Utils.ReadFromFileCallBack(filename, ReadFromStream);
+			return Utils.ReadFromFileCallBack (filename, ReadFromStream);
 		}
 		public static GameInformation ReadFromStream (Stream s) {
-			GameInformation gi = Utils.XmlDeserialize<GameInformation>(s);
-			gi.Resolve();
+			GameInformation gi = Utils.XmlDeserialize<GameInformation> (s);
+			gi.Resolve ();
 			return gi;
 		}
 		public void WriteToStream (Stream s) {
-			Utils.XmlSerialize<GameInformation>(s, this);
+			Utils.XmlSerialize<GameInformation> (s, this);
 		}
 		public void WriteToFile (string filename) {
-			Utils.WriteToFileCallBack(filename, this, Utils.XmlSerialize<GameInformation>);
+			Utils.WriteToFileCallBack (filename, this, Utils.XmlSerialize<GameInformation>);
 		}
 
 	}

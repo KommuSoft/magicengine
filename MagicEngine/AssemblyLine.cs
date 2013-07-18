@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  AssemblyLine.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -22,11 +22,41 @@ using System;
 
 namespace MagicEngine {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+	public class AssemblyLine {
+
+		private ResourceCollection resources;
+		private ResourceCollection accumulators;
+		private ResourceCollection endproducts;
+
+		public ResourceCollection Resources {
+			get {
+				return this.resources;
+			}
+			set {
+				this.resources = value;
+			}
+		}
+
+		public ResourceCollection Accumulators {
+			get {
+				return this.accumulators;
+			}
+			set {
+				this.accumulators = value;
+			}
+		}
+
+		public ResourceCollection EndProducts {
+			get {
+				return this.endproducts;
+			}
+			set {
+				this.endproducts = value;
+			}
+		}
+
+		public AssemblyLine () {
+		}
 	}
 }
 

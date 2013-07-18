@@ -25,7 +25,8 @@ namespace MagicEngine.Information {
 
 	public class Player {
 
-		private readonly HashSet<Guid> technologies = new HashSet<Guid>();
+		private readonly HashSet<Guid> technologies = new HashSet<Guid> ();
+		private readonly ResourceCollection ResourceCollection = new ResourceCollection ();
 
 		public Player () {
 		}

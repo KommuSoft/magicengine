@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  Resource.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -22,11 +22,26 @@ using System;
 
 namespace MagicEngine {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+	public class Resource : NameBase {
+
+		private int id;
+
+		public int Id {
+			get {
+				return this.id;
+			}
+			set {
+				this.id = value;
+			}
+		}
+
+		public Resource () {
+		}
+
+		public Resource (int id, string name) : base(name) {
+			this.Id = id;
+		}
+
 	}
 }
 

@@ -57,6 +57,18 @@
     <Compile Include="Player.cs" />
     <Compile Include="GaussianFunction.cs" />
     <Compile Include="Maths.cs" />
+    <Compile Include="ResourceCollection.cs" />
+    <Compile Include="AssemblyLine.cs" />
+    <Compile Include="NameGenerator.cs" />
+    <Compile Include="CNFormula.cs" />
+    <Compile Include="Sex.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="UnitBase.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="NameBase.cs" />
+    <Compile Include="IName.cs" />
+    <Compile Include="NameGeneratorGroup.cs" />
+    <Compile Include="ReplaceRegex.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

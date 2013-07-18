@@ -24,12 +24,17 @@ using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
-	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
+	public class Technology : GuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid>,IName {
 
-		[XmlAttribute("Name")]
+		private string name;
+
 		public string Name {
-			get;
-			set;
+			get {
+				return this.name;
+			}
+			set {
+				this.name = value;
+			}
 		}
 
 		public DNFormula<Guid> Prerequirements {
@@ -38,23 +43,23 @@ namespace MagicEngine.Information {
 		}
 
 		public Technology () {
-			this.Prerequirements = new DNFormula<Guid>();
+			this.Prerequirements = new DNFormula<Guid> ();
 		}
 		public Technology (string name) : this() {
 			this.Name = name;
 		}
 		public Technology (Guid guid, string name) : base(guid) {
 			this.Name = name;
-			this.Prerequirements = new DNFormula<Guid>();
+			this.Prerequirements = new DNFormula<Guid> ();
 		}
 		public Technology (Guid guid) : base(guid) {
-			this.Prerequirements = new DNFormula<Guid>();
+			this.Prerequirements = new DNFormula<Guid> ();
 		}
 
 		#region IResolvable implementation
 		public virtual void Resolve (Dictionary<Guid,Technology> dictionary) {
-			if(this.Prerequirements == null) {
-				this.Prerequirements = new DNFormula<Guid>();
+			if (this.Prerequirements == null) {
+				this.Prerequirements = new DNFormula<Guid> ();
 			}
 		}
 		#endregion
@@ -65,7 +70,7 @@ namespace MagicEngine.Information {
 
 		#region ISatisfiedWithSet implementation
 		public bool SatisfiedWithSet (ICollection<Guid> collection) {
-			return this.Prerequirements.SatisfiedWithSet(collection);
+			return this.Prerequirements.SatisfiedWithSet (collection);
 		}
 		#endregion
 

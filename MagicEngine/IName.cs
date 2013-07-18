@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  IName.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,14 +19,17 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Xml.Serialization;
 
 namespace MagicEngine {
+	public interface IName {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+		[XmlAttribute("Name")]
+		string Name {
+			get;
+			set;
+		}
+
 	}
 }
 

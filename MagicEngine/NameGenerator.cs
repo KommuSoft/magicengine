@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  NameGenerator.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,14 +19,20 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Text.RegularExpressions;
 
 namespace MagicEngine {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+	public class NameGenerator {
+
+
+
+		public NameGenerator () {
+		}
+
+		public string generateName () {
+			return null;
+		}
 	}
 }
 

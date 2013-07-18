@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  NameGeneratorGroup.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,14 +19,39 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Xml.Serialization;
 
 namespace MagicEngine {
+	public class NameGeneratorGroup {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+		private string[] namebase;
+		private ReplaceRegex[] replaces;
+
+		[XmlArray("Namebase")]
+		[XmlArrayItem("NameBaseItem")]
+		public string[] Namebase {
+			get {
+				return this.namebase;
+			}
+			set {
+				this.namebase = value;
+			}
+		}
+
+		[XmlArray("Replaces")]
+		[XmlArrayItem("ReplaceItem")]
+		public ReplaceRegex[] Replaces {
+			get {
+				return this.replaces;
+			}
+			set {
+				this.replaces = value;
+			}
+		}
+
+		public NameGeneratorGroup () {
+		}
+
 	}
 }
 

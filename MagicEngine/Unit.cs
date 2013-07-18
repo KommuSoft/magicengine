@@ -23,6 +23,10 @@ using System;
 namespace MagicEngine {
 
 	public class Unit {
+
+		private Unit[] parents;
+		private string name;
+
 		public Unit () {
 		}
 	}

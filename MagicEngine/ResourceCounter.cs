@@ -1,5 +1,5 @@
 //
-//  Sex.cs
+//  ResourceCounter.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -22,11 +22,33 @@ using System;
 
 namespace MagicEngine {
 
-	public enum Sex {
-		Male,
-		Female,
-		Clone,
-		Asexual
+	public class ResourceCounter {
+
+		private int resourceIndex;
+		private int value;
+
+		public int ResourceIndex {
+			get {
+				return this.resourceIndex;
+			}
+			set {
+				this.resourceIndex = value;
+			}
+		}
+
+		public int Value {
+			get {
+				return this.value;
+			}
+			set {
+				this.value = value;
+			}
+		}
+
+		public ResourceCounter (int resourceIndex, int value) {
+			this.resourceIndex = resourceIndex;
+			this.value = value;
+		}
 	}
 }
 
