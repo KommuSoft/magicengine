@@ -53,6 +53,13 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		[XmlArray("Technologies")]
+		[XmlArrayItem("Technology")]
+		public List<Technology> Technology {
+			get;
+			set;
+		}
+
 		[XmlArray("Resources")]
 		[XmlArrayItem("Resource")]
 		public List<Resource> Resources {
@@ -62,6 +69,8 @@ namespace MagicEngine.Information {
 
 		public GameInformation () {
 			this.Cultures = new List<Culture> ();
+			this.Resources = new List<Resource> ();
+			this.Technology = new List<Technology> ();
 			this.Spells = new List<Spell> ();
 			this.Buildings = new List<Building> ();
 			this.SpellSkillProfiles = new List<SpellSkillProfile> ();
@@ -73,15 +82,6 @@ namespace MagicEngine.Information {
 		}
 		#endregion
 		public IEnumerable<Technology> GetTechnologies () {
-			/*foreach (Spell spell in this.Spells) {
-				yield return spell;
-			}
-			foreach (Building build in this.Buildings) {
-				yield return build;
-			}
-			foreach (SpellSkillProfile ssp in this.SpellSkillProfiles) {
-				yield return ssp;
-			}*/
 			yield break;
 		}
 		public void Resolve () {

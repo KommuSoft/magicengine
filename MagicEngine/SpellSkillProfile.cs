@@ -91,13 +91,6 @@ namespace MagicEngine.Information {
 			return Math.Min (1.0d, sum);
 		}
 
-		public void Resolve (Dictionary<Guid,Technology> dictionary) {
-			base.Resolve (dictionary);
-			/*foreach (Guid g in this.SpellGuids) {
-				this.Spells.Add ((Spell)dictionary [g]);
-			}*/
-		}
-
 	}
 }
 

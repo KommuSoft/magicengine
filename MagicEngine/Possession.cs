@@ -1,5 +1,5 @@
 //
-//  Building.cs
+//  Possession.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -18,42 +18,12 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-using OpenTK;
-using OpenTK.Graphics.OpenGL;
-using MagicEngine.UserInterface;
-using System.Xml.Serialization;
+using System;
 
 namespace MagicEngine.Information {
-
-	public class Building : GuidBase, ILoadableRenderable {
-
-		[XmlElement("Size")]
-		public Vector3d Size {
-			get;
-			set;
+	public class Possession : NameGuidBase {
+		public Possession () {
 		}
-
-		public Building () {
-		}
-
-		#region ILoadable implementation
-		public void OnLoad (System.EventArgs e) {
-			throw new System.NotImplementedException ();
-		}
-		#endregion
-
-		#region IRenderable implementation
-		public void OnRenderFrame (FrameEventArgs e) {
-			throw new System.NotImplementedException ();
-		}
-		#endregion
-
-
-
-
-
-
-
 	}
 }
 

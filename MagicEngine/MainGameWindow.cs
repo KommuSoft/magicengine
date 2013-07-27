@@ -176,12 +176,50 @@ namespace MagicEngine.UserInterface {
 
 		public static int Main (string[] args) {
 			GameInformation gi = new GameInformation ();
+
 			gi.Cultures.Add (new Culture ("The Three Friends"));
 			gi.Cultures.Add (new Culture ("Order of the Phoenix"));
 			gi.Cultures.Add (new Culture ("Voldemorts Army"));
 			gi.Cultures.Add (new Culture ("Snatchers"));
 			gi.Cultures.Add (new Culture ("Giants"));
 			gi.Cultures.Add (new Culture ("Dombledores army"));
+
+			gi.Resources.Add (new Resource (0x00, "Knuts"));
+			gi.Resources.Add (new Resource (0x01, "Chocolate Frog"));
+
+			gi.Technology.Add (new Technology ("Wizarding house", TechnologyType.Building));
+			gi.Technology.Add (new Technology ("Quidditch Pit", TechnologyType.Building));
+			gi.Technology.Add (new Technology ("Wizarding School", TechnologyType.Building));
+			gi.Technology.Add (new Technology ("Wizarding Bank", TechnologyType.Building));
+			gi.Technology.Add (new Technology ("Wizarding Inn", TechnologyType.Building));
+			gi.Technology.Add (new Technology ("Wizard", TechnologyType.Unit));
+			gi.Technology.Add (new Technology ("Witch", TechnologyType.Unit));
+			gi.Technology.Add (new Technology ("Harry Potter", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Hermion Granger", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Ronald Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Arthur Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Molley Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("William Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Charlie Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Fred Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("George Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Ginny Weasley", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Luna Lovegood", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Tom Riddle", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Neveille Longbottom", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Lucius Malfoy", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Bellatrix Lestrange", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Sirius Black", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("James Potter", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Lily Potter", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Alastor Moody", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Dorothea Tonks", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Remus Lupin", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Severus Snape", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Peter Pittigrew", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Pius Thickness", TechnologyType.Hero));
+			gi.Technology.Add (new Technology ("Albus Dombledore", TechnologyType.Hero));
+
 			gi.WriteToFile ("gameinformation.gi");
 			using (MainGameWindow mgw = new MainGameWindow()) {
 				mgw.Run ();

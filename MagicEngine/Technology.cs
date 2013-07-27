@@ -38,6 +38,10 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		public Technology () {
+			this.Prerequirements = new DNFormula<System.Guid> ();
+		}
+
 		public Technology (TechnologyType type) {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
