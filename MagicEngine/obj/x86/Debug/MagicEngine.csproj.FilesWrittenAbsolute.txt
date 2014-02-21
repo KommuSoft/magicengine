@@ -1,8 +1,0 @@
-/home/kommusoft/Projects/magicengine/MagicEngine/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/kommusoft/Projects/magicengine/MagicEngine/bin/Debug/MagicEngine.exe.mdb
-/home/kommusoft/Projects/magicengine/MagicEngine/bin/Debug/MagicEngine.exe
-/home/kommusoft/Projects/magicengine/MagicEngine/obj/x86/Debug/MagicEngine.exe
-/home/kommusoft/Projects/magicengine/MagicEngine/obj/x86/Debug/MagicEngine.exe.mdb
-/home/kommusoft/Projects/magicengine/MagicEngine/bin/Debug/OpenTK.dll
-/home/kommusoft/Projects/magicengine/MagicEngine/bin/Debug/OpenTK.Compatibility.dll
-/home/kommusoft/Projects/magicengine/MagicEngine/bin/Debug/OpenTK.GLControl.dll

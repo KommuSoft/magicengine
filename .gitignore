@@ -6,6 +6,7 @@
 
 #Binaries
 */bin/*
+*/obj/*
 *.exe
 *.dll
 
