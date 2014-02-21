@@ -38,4 +38,10 @@
     <Compile Include="Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\MagicEngine\MagicEngine.csproj">
+      <Project>{B0B5E3BB-8948-490C-869C-1EF5A0D1FDE2}</Project>
+      <Name>MagicEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

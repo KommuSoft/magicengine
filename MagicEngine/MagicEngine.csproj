@@ -90,4 +90,10 @@
       <HintPath>lib\OpenTK.GLControl.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\graphviz-wrapper\src\GraphVizWrapper\GraphVizWrapper.csproj">
+      <Project>{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}</Project>
+      <Name>GraphVizWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

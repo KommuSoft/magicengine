@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicEngine", "MagicEngine\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdinaryEngine", "OrdinaryEngine\OrdinaryEngine.csproj", "{8A5555D1-7BD8-4990-9A33-645390EA164C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphVizWrapper", "graphviz-wrapper\src\GraphVizWrapper\GraphVizWrapper.csproj", "{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{B0B5E3BB-8948-490C-869C-1EF5A0D1FDE2}.Debug|x86.Build.0 = Debug|x86
 		{B0B5E3BB-8948-490C-869C-1EF5A0D1FDE2}.Release|x86.ActiveCfg = Release|x86
 		{B0B5E3BB-8948-490C-869C-1EF5A0D1FDE2}.Release|x86.Build.0 = Release|x86
+		{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = MagicEngine\MagicEngine.csproj
