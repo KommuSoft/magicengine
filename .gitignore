@@ -1,0 +1,11 @@
+#Temporaries
+*~
+*.*~*
+*.swp
+*.bak
+
+#Binaries
+*/bin/*
+*.exe
+*.dll
+

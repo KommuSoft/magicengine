@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GameInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Cultures>
-    <Culture Guid="2335c4aa-c49b-40f1-b8f5-53d2c3336d18" Name="The Three Friends">
+    <Culture Guid="0fedca1b-39cd-4487-81c2-1839fe5e0785" Name="The Three Friends">
       <SupportedTechnologies />
     </Culture>
-    <Culture Guid="a4a2e6d2-6b5a-4634-8ccf-452cacd5447f" Name="Order of the Phoenix">
+    <Culture Guid="101b5c3c-a93f-425d-a73d-16dfc0082108" Name="Order of the Phoenix">
       <SupportedTechnologies />
     </Culture>
-    <Culture Guid="727fb8c1-6068-4ad5-90ba-ba25bf10dfea" Name="Voldemorts Army">
+    <Culture Guid="b9327cc6-c828-49dc-ab72-c16b21c9e19a" Name="Voldemorts Army">
       <SupportedTechnologies />
     </Culture>
-    <Culture Guid="07c1115b-e196-4938-ac8c-7db77cc1da6c" Name="Snatchers">
+    <Culture Guid="7b579f12-b083-49ec-9983-312dbb6b0cd4" Name="Snatchers">
       <SupportedTechnologies />
     </Culture>
-    <Culture Guid="65db8dff-0df1-4c97-b6b9-77e09491eeb3" Name="Giants">
+    <Culture Guid="8819d624-7199-4386-86fd-b6c9d544ebb5" Name="Giants">
       <SupportedTechnologies />
     </Culture>
-    <Culture Guid="1261fd04-78a5-42af-ab1b-661a964598a0" Name="Dombledores army">
+    <Culture Guid="6564ba35-f883-40ae-819f-62627413b80c" Name="Dombledores army">
       <SupportedTechnologies />
     </Culture>
   </Cultures>
@@ -24,76 +24,100 @@
   <Buildings />
   <SpellSkillProfiles />
   <Technologies>
-    <Technology Guid="83dcb6fe-083b-4697-ba2a-7aebdff75881" Name="Wizard house" Type="Building">
+    <Technology Guid="6af32d2a-819d-4c7a-9cb5-9f9b600adb48" Name="Wizarding house" Type="Building">
       <Prerequirements />
     </Technology>
-    <Technology Guid="50a304cc-e5f1-4914-b15b-9ef56f971f04" Name="Harry Potter" Type="Hero">
+    <Technology Guid="54036089-29d7-446f-9caf-51c5dab1c405" Name="Quidditch Pit" Type="Building">
       <Prerequirements />
     </Technology>
-    <Technology Guid="0ae294cb-8832-49e4-b8f8-de0fe5c775e1" Name="Hermion Granger" Type="Hero">
+    <Technology Guid="b5e8e9b5-6943-4ff4-927b-fb992dfa349a" Name="Wizarding School" Type="Building">
       <Prerequirements />
     </Technology>
-    <Technology Guid="09803873-cfd5-40ec-8518-1cd184158071" Name="Ronald Weasley" Type="Hero">
+    <Technology Guid="cbeff8c4-493c-41c3-b819-dea0952eddbc" Name="Wizarding Bank" Type="Building">
       <Prerequirements />
     </Technology>
-    <Technology Guid="983368fa-cd73-493f-95b2-e05471f2c951" Name="Arthur Weasley" Type="Hero">
+    <Technology Guid="8de878a6-99e2-4672-9542-f2c94cb3d84a" Name="Wizarding Inn" Type="Building">
       <Prerequirements />
     </Technology>
-    <Technology Guid="ffa9bbe3-d872-4f39-87df-04aa1a42ea62" Name="Molley Weasley" Type="Hero">
+    <Technology Guid="0ba90b88-b845-4873-8536-d7b4786c0919" Name="Wizard" Type="Unit">
       <Prerequirements />
     </Technology>
-    <Technology Guid="6b172ffb-29ab-44d3-a030-36bff7041e29" Name="William Weasley" Type="Hero">
+    <Technology Guid="4edc1125-e552-43c3-9290-cb788308f753" Name="Witch" Type="Unit">
       <Prerequirements />
     </Technology>
-    <Technology Guid="63778ef0-3559-43ba-8756-37c76214a9c1" Name="Charlie Weasley" Type="Hero">
+    <Technology Guid="ac65e36c-9fd8-41ac-af09-6da516b4e3b1" Name="Harry Potter" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="170ac103-bcb5-4c98-8bd5-d9af3c6e6fc4" Name="Fred Weasley" Type="Hero">
+    <Technology Guid="32fa119d-93be-404b-a41f-c57b02d366cf" Name="Hermion Granger" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="61c2f389-9918-4d59-bd35-306f6c2574c1" Name="George Weasley" Type="Hero">
+    <Technology Guid="5e0abf9c-a2c2-434e-ab1f-f24888cd2e00" Name="Ronald Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="17ca28ed-edf3-4832-b932-8ef8b3ddbfae" Name="Ginny Weasley" Type="Hero">
+    <Technology Guid="25d137cb-b33e-4806-a1fd-2f8208f0a054" Name="Arthur Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="ac948e10-bc20-4a01-8084-3911d330f71a" Name="Luna Lovegood" Type="Hero">
+    <Technology Guid="7d670850-dfbd-446a-b4f9-4160ec3f0036" Name="Molley Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="462b0cdf-c531-44ea-9d91-9bd2f31c537a" Name="Tom Riddle" Type="Hero">
+    <Technology Guid="a66f74ec-4350-462f-ad70-d2fa41c39fd7" Name="William Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="72d6a7ce-8769-441d-bdde-8361f4f1b944" Name="Neveille Longbottom" Type="Hero">
+    <Technology Guid="6ec54a7d-756a-47c6-83e1-afbe0abf001b" Name="Charlie Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="bd1ad4f1-a38e-42d2-bca4-1622c2eaf061" Name="Lucius Malfoy" Type="Hero">
+    <Technology Guid="98ef4f51-bdd4-4cf3-9d54-4111478486a4" Name="Fred Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="68625975-25ac-498b-b3ee-b9237548a173" Name="Bellatrix Lestrange" Type="Hero">
+    <Technology Guid="ef2dd845-278b-4e4d-a1cf-352d4481dcf9" Name="George Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="40bc9473-0e25-4945-870e-1715c6fe1069" Name="Sirius Black" Type="Hero">
+    <Technology Guid="42004210-074d-4260-bf3f-511a5ebd86ce" Name="Ginny Weasley" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="3485af0c-b2ff-4738-9c49-1399c5c2f3bf" Name="James Potter" Type="Hero">
+    <Technology Guid="da3ef4f6-634f-4192-bfdd-0922a6f1410c" Name="Luna Lovegood" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="5d6dc151-c77d-4b8a-bf36-bdac62f87f28" Name="Lily Potter" Type="Hero">
+    <Technology Guid="aa4a5450-3aa2-4d7a-8caf-4361725d052a" Name="Tom Riddle" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="2cbe8bf5-58b9-4655-b4a1-8be597d1fd3a" Name="Alastor Moody" Type="Hero">
+    <Technology Guid="acccfeec-cf5c-40c3-bacf-e7fe50d6d59a" Name="Neveille Longbottom" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="762dbe14-f9bd-4e48-bf6a-c2b5c3fbbba9" Name="Dorothea Tonks" Type="Hero">
+    <Technology Guid="7ac7778a-3535-4f60-9b7f-58f76d7c3681" Name="Lucius Malfoy" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="ca6c7de8-7a03-42c9-8483-4b509f5c1c8e" Name="Remus Lupin" Type="Hero">
+    <Technology Guid="00274d8c-eadf-4245-9be3-fdb4a3c5cde8" Name="Bellatrix Lestrange" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="ced32e64-b2a5-4caf-919b-deeabd66b238" Name="Severus Snape" Type="Hero">
+    <Technology Guid="293d931f-0b1d-400a-b979-ebc4b4dc962a" Name="Sirius Black" Type="Hero">
       <Prerequirements />
     </Technology>
-    <Technology Guid="d9b58e9f-1dd3-43a9-84a3-9c09d5e432eb" Name="Peter Pittigrew" Type="Hero">
+    <Technology Guid="bc8a2d5d-0856-4f3d-bf1c-525d9999a8b4" Name="James Potter" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="ccb18763-e5a4-4124-a813-e90b6c146c55" Name="Lily Potter" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="4ed8b1e2-34f0-4b05-914d-a4faed971960" Name="Alastor Moody" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="b0238375-19a7-4ad1-961e-dfcf7d009447" Name="Dorothea Tonks" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="1705fdaa-0950-484a-a9be-131f75df2c3b" Name="Remus Lupin" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="5957712b-3463-4eef-af88-26b0cf6b88b5" Name="Severus Snape" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="2f5523ee-7d3a-418d-ba2c-c9abe2ee9e65" Name="Peter Pittigrew" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="2e7eb53e-396c-4ab7-84e8-4cb40f443f43" Name="Pius Thickness" Type="Hero">
+      <Prerequirements />
+    </Technology>
+    <Technology Guid="24ae253e-dd22-48ab-974e-b275b2d76c1e" Name="Albus Dombledore" Type="Hero">
       <Prerequirements />
     </Technology>
   </Technologies>

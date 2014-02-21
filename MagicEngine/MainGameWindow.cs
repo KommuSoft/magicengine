@@ -25,9 +25,7 @@ using System.Drawing;
 using System.Diagnostics;
 using System.Threading;
 using System.IO;
-
 using MagicEngine.Information;
-
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Input;
@@ -41,23 +39,19 @@ using OOGL;
 using OOGL.GUI;
 using OOGL.GUI.Abstract;
 using OOGL.GUI.VertexStructures;*/
-
 namespace MagicEngine.UserInterface {
-
 	public class MainGameWindow : GameWindow {
-
 		private Matrix4 perspective;
 		private double time = 0.0d;
 		/*private Model model;
 		private Controller controller;*/
-
-		public MainGameWindow () : base(800,600) {
+		public MainGameWindow () : base (800, 600) {
 			this.Title = "MagicEngine";
 		}
 
 		protected override void OnLoad (EventArgs e) {
 			this.OnResize (e);
-			GL.ClearColor (Color.SkyBlue);
+			GL.ClearColor (1.0f, 0.0f, 0.0f, 0.0f);
 			GL.Enable (EnableCap.DepthTest);
 			GL.Enable (EnableCap.ColorMaterial);
 			GL.Enable (EnableCap.CullFace);
@@ -221,12 +215,11 @@ namespace MagicEngine.UserInterface {
 			gi.Technology.Add (new Technology ("Albus Dombledore", TechnologyType.Hero));
 
 			gi.WriteToFile ("gameinformation.gi");
-			using (MainGameWindow mgw = new MainGameWindow()) {
+			using (MainGameWindow mgw = new MainGameWindow ()) {
 				mgw.Run ();
 			}
 			return 0x00;
 		}
-
 	}
 }
 
