@@ -4,7 +4,7 @@
   <Target Name="CI" DependsOnTargets="Build" />
  
   <Target Name="Build">
-    <MSBuild Projects="MagicEngine.sln" Properties="Configuration=Debug;Platform=AnyCPU" />
+    <MSBuild Projects="MagicEngine.sln" Properties="Configuration=Debug;Platform=x86" />
   </Target>
  
 </Project>
