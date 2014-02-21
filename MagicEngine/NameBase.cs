@@ -22,19 +22,11 @@ using System;
 using System.Xml.Serialization;
 
 namespace MagicEngine {
-
 	public class NameBase : IName {
-
-		private string name;
-
-		[XmlAttribute("Name")]
+		[XmlAttribute ("Name")]
 		public string Name {
-			get {
-				return this.name;
-			}
-			set {
-				this.name = value;
-			}
+			get;
+			set;
 		}
 
 		public NameBase () {
@@ -43,7 +35,6 @@ namespace MagicEngine {
 		public NameBase (string name) {
 			this.Name = name;
 		}
-
 	}
 }
 

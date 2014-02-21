@@ -22,26 +22,29 @@ using System;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-
-	public class GuidBase {
-
-		[XmlAttribute("Guid")]
+	public class GuidableBase : IGuidable {
+		[XmlAttribute ("Guid")]
 		public Guid Guid {
 			get;
 			set;
 		}
 
-		protected GuidBase () {
-			this.Guid = Guid.NewGuid();
+		protected GuidableBase () {
+			this.Guid = Guid.NewGuid ();
 		}
-		protected GuidBase (Guid guid) {
+
+		protected GuidableBase (Guid guid) {
 			this.Guid = guid;
 		}
 
-		public override int GetHashCode () {
-			return base.GetHashCode()^this.Guid.GetHashCode();
+		public override bool Equals (object obj) {
+			IGuidable other = obj as IGuidable;
+			return (other != null && this.Guid == other.Guid);
 		}
 
+		public override int GetHashCode () {
+			return this.Guid.GetHashCode ();
+		}
 	}
 }
 

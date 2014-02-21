@@ -23,7 +23,7 @@ using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
-	public class NameGuidBase : GuidBase, IName {
+	public class NameGuidBase : GuidableBase, IName {
 
 		private string name;
 

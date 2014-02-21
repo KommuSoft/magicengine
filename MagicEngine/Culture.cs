@@ -23,34 +23,20 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-
-	[XmlType("Culture")]
+	[XmlType ("Culture")]
 	public class Culture : GuidBase {
-
-		[XmlAttribute("Name")]
+		[XmlAttribute ("Name")]
 		public string Name {
 			get;
 			set;
 		}
 
-		[XmlArray("SupportedTechnologies")]
-		[XmlArrayItem("Technology")]
-		public List<Guid> SupportedTechnologies {
-			get;
-			set;
+		public Culture () {
 		}
 
-		public Culture () {
-			this.SupportedTechnologies = new List<Guid>();
-		}
-		public Culture (string name) : this() {
+		public Culture (string name) : this () {
 			this.Name = name;
 		}
-
-		public void AddTechnology (Technology tech) {
-			this.SupportedTechnologies.Add(tech.Guid);
-		}
-
 	}
 }
 

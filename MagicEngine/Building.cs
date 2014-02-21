@@ -25,7 +25,7 @@ using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 
-	public class Building : GuidBase, ILoadableRenderable {
+	public class Building : GuidableBase, ILoadableRenderable {
 
 		[XmlElement("Size")]
 		public Vector3d Size {

@@ -44,7 +44,6 @@
     <Compile Include="ILoadableRenderable.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="SpellSkillProfile.cs" />
-    <Compile Include="GuidBase.cs" />
     <Compile Include="Technology.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="ITechnolable.cs" />
@@ -73,6 +72,9 @@
     <Compile Include="TechnologyType.cs" />
     <Compile Include="Possession.cs" />
     <Compile Include="WorldLayer.cs" />
+    <Compile Include="GuidableBase.cs" />
+    <Compile Include="IGuidable.cs" />
+    <Compile Include="GuidNameBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
