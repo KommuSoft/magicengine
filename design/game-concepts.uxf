@@ -4,7 +4,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>530</x>
-      <y>410</y>
+      <y>560</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -18,14 +18,13 @@ GameInformation
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>900</x>
-      <y>410</y>
-      <w>210</w>
-      <h>190</h>
+      <y>560</y>
+      <w>230</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 Culture
 --
-+ Name : String {gs}
 --</panel_attributes>
     <additional_attributes/>
   </element>
@@ -33,7 +32,7 @@ Culture
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>710</x>
-      <y>380</y>
+      <y>530</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -45,7 +44,7 @@ cultures</panel_attributes>
     <type>com.umlet.element.Interface</type>
     <coordinates>
       <x>730</x>
-      <y>130</y>
+      <y>240</y>
       <w>140</w>
       <h>90</h>
     </coordinates>
@@ -58,9 +57,9 @@ cultures</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>900</x>
-      <y>130</y>
-      <w>210</w>
-      <h>90</h>
+      <y>240</y>
+      <w>230</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 GuidableBase
@@ -73,7 +72,7 @@ GuidableBase
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>780</x>
-      <y>110</y>
+      <y>220</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -83,39 +82,39 @@ GuidableBase
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>970</x>
-      <y>320</y>
+      <x>990</x>
+      <y>380</y>
       <w>50</w>
-      <h>110</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;90</additional_attributes>
+    <additional_attributes>30;30;30;60</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Interface</type>
     <coordinates>
       <x>720</x>
-      <y>280</y>
+      <y>360</y>
       <w>160</w>
       <h>90</h>
     </coordinates>
     <panel_attributes>IName
 --
-+ Name : name {gs}</panel_attributes>
++ Name : string {gs}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>900</x>
-      <y>260</y>
-      <w>210</w>
-      <h>90</h>
+      <y>340</y>
+      <w>230</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
 NameGuidableBase
 --
-+ Guid : Guid {gs}
++ Name : string {gs}
 --</panel_attributes>
     <additional_attributes/>
   </element>
@@ -123,7 +122,7 @@ NameGuidableBase
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>780</x>
-      <y>260</y>
+      <y>340</y>
       <w>140</w>
       <h>50</h>
     </coordinates>
@@ -133,12 +132,62 @@ NameGuidableBase
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>970</x>
-      <y>190</y>
+      <x>990</x>
+      <y>280</y>
       <w>50</w>
-      <h>90</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>30;30;30;70</additional_attributes>
+    <additional_attributes>30;30;30;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Interface</type>
+    <coordinates>
+      <x>700</x>
+      <y>460</y>
+      <w>200</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>IDescription
+--
++ Description : string {gs}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>900</x>
+      <y>440</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;class&gt;&gt;
+NameDescriptionGuidableBase
+--
++ Description : string {gs}
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>780</x>
+      <y>440</y>
+      <w>140</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>30;30;120;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>990</x>
+      <y>480</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
   </element>
 </diagram>

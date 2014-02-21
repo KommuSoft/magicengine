@@ -74,6 +74,8 @@
     <Compile Include="GuidableBase.cs" />
     <Compile Include="IGuidable.cs" />
     <Compile Include="NameGuidableBase.cs" />
+    <Compile Include="IDescription.cs" />
+    <Compile Include="NameDescriptionGuidableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
