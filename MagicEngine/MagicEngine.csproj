@@ -72,6 +72,7 @@
     <Compile Include="NameGuidBase.cs" />
     <Compile Include="TechnologyType.cs" />
     <Compile Include="Possession.cs" />
+    <Compile Include="WorldLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -1,29 +1,10 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/MainGameWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/WorldLayer.cs">
     <Files>
-      <File FileName="MagicEngine/Technology.cs" Line="41" Column="23" />
-      <File FileName="MagicEngine/IResolvable.cs" Line="8" Column="51" />
-      <File FileName="MagicEngine/GameInformation.cs" Line="73" Column="31" />
-      <File FileName="MagicEngine/SpellSkillProfile.cs" Line="92" Column="4" />
-      <File FileName="MagicEngine/MainGameWindow.cs" Line="194" Column="82" />
-      <File FileName="MagicEngine/Spell.cs" Line="27" Column="35" />
-      <File FileName="MagicEngine/ColorUtils.cs" Line="1" Column="1" />
-      <File FileName="MagicEngine/DNFormula.cs" Line="37" Column="47" />
-      <File FileName="MagicEngine/Player.cs" Line="29" Column="86" />
-      <File FileName="MagicEngine/ResourceCounter.cs" Line="44" Column="24" />
-      <File FileName="MagicEngine/ResourceCollection.cs" Line="33" Column="4" />
-      <File FileName="MagicEngine/AssemblyLine.cs" Line="26" Column="3" />
-      <File FileName="MagicEngine/Resource.cs" Line="30" Column="6" />
-      <File FileName="MagicEngine/NameBase.cs" Line="44" Column="20" />
-      <File FileName="MagicEngine/NameGenerator.cs" Line="34" Column="16" />
-      <File FileName="MagicEngine/IName.cs" Line="22" Column="31" />
-      <File FileName="MagicEngine/NameGuidBase.cs" Line="47" Column="49" />
-      <File FileName="MagicEngine/GuidBase.cs" Line="34" Column="3" />
-      <File FileName="MagicEngine/Building.cs" Line="47" Column="48" />
-      <File FileName="MagicEngine/TechnologyType.cs" Line="31" Column="15" />
-      <File FileName="MagicEngine/Possession.cs" Line="24" Column="42" />
-      <File FileName="MagicEngine/ITechnolable.cs" Line="1" Column="1" />
+      <File FileName="MagicEngine/MainGameWindow.cs" Line="62" Column="20" />
+      <File FileName="MagicEngine/GaussianFunction.cs" Line="1" Column="1" />
+      <File FileName="MagicEngine/WorldLayer.cs" Line="11" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
