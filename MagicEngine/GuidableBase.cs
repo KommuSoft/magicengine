@@ -22,7 +22,7 @@ using System;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-	public class GuidableBase : IGuidable {
+	public abstract class GuidableBase : IGuidable {
 		[XmlAttribute ("Guid")]
 		public Guid Guid {
 			get;

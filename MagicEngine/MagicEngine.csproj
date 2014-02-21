@@ -68,13 +68,12 @@
     <Compile Include="IName.cs" />
     <Compile Include="NameGeneratorGroup.cs" />
     <Compile Include="ReplaceRegex.cs" />
-    <Compile Include="NameGuidBase.cs" />
     <Compile Include="TechnologyType.cs" />
     <Compile Include="Possession.cs" />
     <Compile Include="WorldLayer.cs" />
     <Compile Include="GuidableBase.cs" />
     <Compile Include="IGuidable.cs" />
-    <Compile Include="GuidNameBase.cs" />
+    <Compile Include="NameGuidableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

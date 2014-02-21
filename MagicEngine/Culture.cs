@@ -24,18 +24,17 @@ using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 	[XmlType ("Culture")]
-	public class Culture : GuidBase {
-		[XmlAttribute ("Name")]
-		public string Name {
-			get;
-			set;
+	public class Culture : NameGuidableBase {
+		public Culture () : base () {
 		}
 
-		public Culture () {
+		public Culture (Guid guid) : base (guid) {
 		}
 
-		public Culture (string name) : this () {
-			this.Name = name;
+		public Culture (string name) : base (name) {
+		}
+
+		public Culture (Guid guid, string name) : base (guid, name) {
 		}
 	}
 }
