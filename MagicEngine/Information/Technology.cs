@@ -24,7 +24,8 @@ using MagicEngine.Serialisation;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-	public class Technology : NameDescriptionGuidableSensitiveBase, IImage {
+	[XmlType ("Technology")]
+	public class Technology : NameDescriptionGuidableBase, IImage {
 		[XmlElement ("Image")]
 		public SerializableImage Image {
 			get;
@@ -47,6 +48,30 @@ namespace MagicEngine.Information {
 		}
 
 		public Technology (Guid guid, string name, string description) : base (guid, name, description) {
+		}
+
+		public Technology (SerializableImage img) : base () {
+			this.Image = img;
+		}
+
+		public Technology (Guid guid, SerializableImage img) : base (guid) {
+			this.Image = img;
+		}
+
+		public Technology (string name, SerializableImage img) : base (name) {
+			this.Image = img;
+		}
+
+		public Technology (Guid guid, string name, SerializableImage img) : base (guid, name) {
+			this.Image = img;
+		}
+
+		public Technology (string name, string description, SerializableImage img) : base (name, description) {
+			this.Image = img;
+		}
+
+		public Technology (Guid guid, string name, string description, SerializableImage img) : base (guid, name, description) {
+			this.Image = img;
 		}
 	}
 }

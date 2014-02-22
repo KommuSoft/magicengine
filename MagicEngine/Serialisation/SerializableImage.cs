@@ -13,7 +13,7 @@ namespace MagicEngine.Serialisation {
 			set;
 		}
 
-		[XmlAttribute ("Data")]
+		[XmlIgnore]
 		public string TextualRepresentation {
 			get {
 				if (this.Bitmap != null) {

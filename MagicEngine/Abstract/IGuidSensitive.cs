@@ -7,7 +7,7 @@ namespace MagicEngine.Abstract {
 	public interface IGuidSensitive {
 		[XmlArray ("SensitiveGuids")]
 		[XmlArrayItem ("Guid")]
-		ICollection<Guid> SensitiveGuids {
+		HashSet<Guid> SensitiveGuids {
 			get;
 			set;
 		}

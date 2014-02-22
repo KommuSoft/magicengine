@@ -36,21 +36,14 @@ namespace MagicEngine.Information {
 
 		[XmlArray ("Technologies")]
 		[XmlArrayItem ("Technology")]
-		public List<Technology> Technology {
-			get;
-			set;
-		}
-
-		[XmlArray ("Resources")]
-		[XmlArrayItem ("Resource")]
-		public List<Resource> Resource {
+		public List<Technology> Technologies {
 			get;
 			set;
 		}
 
 		public GameInformation () {
 			this.Cultures = new List<Culture> ();
-			this.Technology = new List<Technology> ();
+			this.Technologies = new List<Technology> ();
 		}
 
 		public static GameInformation ReadFromFile (string filename) {
