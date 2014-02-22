@@ -47,7 +47,6 @@
     <Compile Include="IResolvable.cs" />
     <Compile Include="ColorUtils.cs" />
     <Compile Include="Utils.cs" />
-    <Compile Include="DNFormula.cs" />
     <Compile Include="AndFormula.cs" />
     <Compile Include="ISatisfiedWithSet.cs" />
     <Compile Include="Player.cs" />
@@ -56,14 +55,12 @@
     <Compile Include="ResourceCollection.cs" />
     <Compile Include="AssemblyLine.cs" />
     <Compile Include="NameGenerator.cs" />
-    <Compile Include="CNFormula.cs" />
     <Compile Include="Sex.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="UnitBase.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="NameGeneratorGroup.cs" />
     <Compile Include="ReplaceRegex.cs" />
-    <Compile Include="TechnologyType.cs" />
     <Compile Include="Possession.cs" />
     <Compile Include="WorldLayer.cs" />
     <Compile Include="Abstract\GuidableBase.cs" />
@@ -73,11 +70,11 @@
     <Compile Include="Abstract\NameBase.cs" />
     <Compile Include="Abstract\NameDescriptionGuidableBase.cs" />
     <Compile Include="Abstract\NameGuidableBase.cs" />
-    <Compile Include="Abstract\ICultureSensitive.cs" />
-    <Compile Include="Abstract\NameDescriptionCulturedGuidableBase.cs" />
     <Compile Include="Information\Culture.cs" />
     <Compile Include="Information\GameInformation.cs" />
     <Compile Include="Information\Technology.cs" />
+    <Compile Include="Abstract\IGuidSensitive.cs" />
+    <Compile Include="Abstract\NameDescriptionGuidableSensitiveBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

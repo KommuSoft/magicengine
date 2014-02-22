@@ -24,44 +24,45 @@ using System.IO;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-
-	[XmlRoot("GameInformation")]
+	[XmlRoot ("GameInformation")]
 	public class GameInformation : ITechnolable, IResolvable<Guid,Technology> {
-
-		[XmlArray("Cultures")]
-		[XmlArrayItem("Culture")]
+		[XmlArray ("Cultures")]
+		[XmlArrayItem ("Culture")]
 		public List<Culture> Cultures {
 			get;
 			set;
 		}
-		[XmlArray("Spells")]
-		[XmlArrayItem("Spell")]
+
+		[XmlArray ("Spells")]
+		[XmlArrayItem ("Spell")]
 		public List<Spell> Spells {
 			get;
 			set;
 		}
-		[XmlArray("Buildings")]
-		[XmlArrayItem("Building")]
+
+		[XmlArray ("Buildings")]
+		[XmlArrayItem ("Building")]
 		public List<Building> Buildings {
 			get;
 			set;
 		}
-		[XmlArray("SpellSkillProfiles")]
-		[XmlArrayItem("SpellSkillProfile")]
+
+		[XmlArray ("SpellSkillProfiles")]
+		[XmlArrayItem ("SpellSkillProfile")]
 		public List<SpellSkillProfile> SpellSkillProfiles {
 			get;
 			set;
 		}
 
-		[XmlArray("Technologies")]
-		[XmlArrayItem("Technology")]
+		[XmlArray ("Technologies")]
+		[XmlArrayItem ("Technology")]
 		public List<Technology> Technology {
 			get;
 			set;
 		}
 
-		[XmlArray("Resources")]
-		[XmlArrayItem("Resource")]
+		[XmlArray ("Resources")]
+		[XmlArrayItem ("Resource")]
 		public List<Resource> Resources {
 			get;
 			set;
@@ -77,13 +78,17 @@ namespace MagicEngine.Information {
 		}
 
 		#region ITechnolable implementation
+
 		public void Collect (List<Technology> technologies) {
 			technologies.AddRange (this.GetTechnologies ());
 		}
+
 		#endregion
+
 		public IEnumerable<Technology> GetTechnologies () {
 			yield break;
 		}
+
 		public void Resolve () {
 			List<Technology> alltechs = new List<Technology> ();
 			this.Collect (alltechs);
@@ -93,28 +98,31 @@ namespace MagicEngine.Information {
 			}
 			this.Resolve (techdic);
 		}
+
 		#region IResolvable implementation
+
 		public void Resolve (Dictionary<Guid, Technology> dictionary) {
-			foreach (Technology tech in this.GetTechnologies()) {
-				tech.Resolve (dictionary);
-			}
+
 		}
+
 		#endregion
+
 		public static GameInformation ReadFromFile (string filename) {
 			return Utils.ReadFromFileCallBack (filename, ReadFromStream);
 		}
+
 		public static GameInformation ReadFromStream (Stream s) {
 			GameInformation gi = Utils.XmlDeserialize<GameInformation> (s);
 			gi.Resolve ();
 			return gi;
 		}
+
 		public void WriteToStream (Stream s) {
 			Utils.XmlSerialize<GameInformation> (s, this);
 		}
+
 		public void WriteToFile (string filename) {
 			Utils.WriteToFileCallBack (filename, this, Utils.XmlSerialize<GameInformation>);
 		}
-
 	}
-
 }
