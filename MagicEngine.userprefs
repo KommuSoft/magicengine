@@ -1,16 +1,10 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/Information/Technology.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/Abstract/NameDescriptionGuidableBase.cs">
     <Files>
-      <File FileName="MagicEngine/MainGameWindow.cs" Line="35" Column="3" />
-      <File FileName="MagicEngine/Information/GameInformation.cs" Line="35" Column="4" />
-      <File FileName="MagicEngine/NameGeneratorGroup.cs" Line="44" Column="1" />
-      <File FileName="MagicEngine/Information/Technology.cs" Line="29" Column="22" />
-      <File FileName="MagicEngine/Rendering/ModelGenerators.cs" Line="23" Column="32" />
-      <File FileName="MagicEngine/Rendering/ModelLoader.cs" Line="24" Column="32" />
-      <File FileName="MagicEngine/Rendering/RenderElement.cs" Line="40" Column="1" />
-      <File FileName="MagicEngine/Information/Resource.cs" Line="26" Column="21" />
-      <File FileName="MagicEngine/Serialisation/SerializableImage.cs" Line="8" Column="30" />
+      <File FileName="MagicEngine/Abstract/NameDescriptionGuidableSensitiveBase.cs" Line="36" Column="4" />
+      <File FileName="MagicEngine/Information/Technology.cs" Line="23" Column="33" />
+      <File FileName="MagicEngine/Abstract/NameDescriptionGuidableBase.cs" Line="12" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
