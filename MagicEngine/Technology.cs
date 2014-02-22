@@ -21,18 +21,17 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
-
-	public class Technology : NameGuidBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
-
-		[XmlElement("Prerequirements")]
+	public class Technology : NameGuidableBase, IResolvable<Guid,Technology>, ITechnolable, ISatisfiedWithSet<Guid> {
+		[XmlElement ("Prerequirements")]
 		public DNFormula<Guid> Prerequirements {
 			get;
 			set;
 		}
 
-		[XmlAttribute("Type")]
+		[XmlAttribute ("Type")]
 		public TechnologyType Type {
 			get;
 			set;
@@ -46,41 +45,51 @@ namespace MagicEngine.Information {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
 		}
-		public Technology (string name, TechnologyType type) : base(name) {
+
+		public Technology (string name, TechnologyType type) : base (name) {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
 		}
-		public Technology (Guid guid, string name, TechnologyType type) : base(guid,name) {
+
+		public Technology (Guid guid, string name, TechnologyType type) : base (guid, name) {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
 		}
-		public Technology (string name, Guid guid, TechnologyType type) : base(name,guid) {
+
+		public Technology (string name, Guid guid, TechnologyType type) : base (guid, name) {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
 		}
-		public Technology (Guid guid, TechnologyType type) : base(guid) {
+
+		public Technology (Guid guid, TechnologyType type) : base (guid) {
 			this.Prerequirements = new DNFormula<Guid> ();
 			this.Type = type;
 		}
 
 		#region IResolvable implementation
+
 		public virtual void Resolve (Dictionary<Guid,Technology> dictionary) {
 			if (this.Prerequirements == null) {
 				this.Prerequirements = new DNFormula<Guid> ();
 			}
 		}
+
 		#endregion
+
 		#region ITechnolable implementation
+
 		public virtual void Collect (List<Technology> technologies) {
 		}
+
 		#endregion
 
 		#region ISatisfiedWithSet implementation
+
 		public bool SatisfiedWithSet (ICollection<Guid> collection) {
 			return this.Prerequirements.SatisfiedWithSet (collection);
 		}
-		#endregion
 
+		#endregion
 
 	}
 }

@@ -21,20 +21,21 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
+	using FunctionComponent = Tuple<int,double,double>;
 
-	using FunctionComponent = Tuple<int,double,double>;//mean,invsigma,mul
-
-	[XmlType("SpellSkillProfile")]
-	public class SpellSkillProfile : NameGuidBase {
-
+	//mean,invsigma,mul
+	[XmlType ("SpellSkillProfile")]
+	public class SpellSkillProfile : NameGuidableBase {
 		[XmlIgnore]
 		public double this [int wavelength] {
 			get {
 				return CalculateSkill (wavelength);
 			}
 		}
+
 		[XmlIgnore]
 		public double this [Spell sp] {
 			get {
@@ -45,18 +46,21 @@ namespace MagicEngine.Information {
 				}
 			}
 		}
-		[XmlArray("SkillDefinition")]
-		[XmlArrayItem("SkillElement")]
+
+		[XmlArray ("SkillDefinition")]
+		[XmlArrayItem ("SkillElement")]
 		public List<GaussianFunction> Elements {
 			get;
 			set;
 		}
-		[XmlArray("Spells")]
-		[XmlArrayItem("Spell")]
+
+		[XmlArray ("Spells")]
+		[XmlArrayItem ("Spell")]
 		public List<Guid> SpellGuids {
 			get;
 			set;
 		}
+
 		[XmlIgnore]
 		public HashSet<Spell> Spells {
 			get;
@@ -66,13 +70,16 @@ namespace MagicEngine.Information {
 		public SpellSkillProfile () {
 			this.initialize ();
 		}
-		public SpellSkillProfile (string name) : base(name) {
+
+		public SpellSkillProfile (string name) : base (name) {
 			this.initialize ();
 		}
-		public SpellSkillProfile (Guid guid) : base(guid) {
+
+		public SpellSkillProfile (Guid guid) : base (guid) {
 			this.initialize ();
 		}
-		public SpellSkillProfile (Guid guid, string name) : base(guid) {
+
+		public SpellSkillProfile (Guid guid, string name) : base (guid) {
 			this.initialize ();
 		}
 
@@ -90,7 +97,6 @@ namespace MagicEngine.Information {
 			}
 			return Math.Min (1.0d, sum);
 		}
-
 	}
 }
 

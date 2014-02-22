@@ -1,7 +1,7 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Abstract {
 	public interface IDescription {
 		[XmlAttribute ("Description")]
 		string Description {

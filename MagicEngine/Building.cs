@@ -22,12 +22,11 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using MagicEngine.UserInterface;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
-
 	public class Building : GuidableBase, ILoadableRenderable {
-
-		[XmlElement("Size")]
+		[XmlElement ("Size")]
 		public Vector3d Size {
 			get;
 			set;
@@ -37,22 +36,20 @@ namespace MagicEngine.Information {
 		}
 
 		#region ILoadable implementation
+
 		public void OnLoad (System.EventArgs e) {
 			throw new System.NotImplementedException ();
 		}
+
 		#endregion
 
 		#region IRenderable implementation
+
 		public void OnRenderFrame (FrameEventArgs e) {
 			throw new System.NotImplementedException ();
 		}
+
 		#endregion
-
-
-
-
-
-
 
 	}
 }

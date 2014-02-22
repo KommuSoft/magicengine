@@ -1,13 +1,13 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Abstract {
 	public abstract class NameDescriptionGuidableBase : NameGuidableBase, IDescription {
 
 		#region IDescription implementation
 
 		[XmlAttribute ("Description")]
-		string Description {
+		public string Description {
 			get;
 			set;
 		}

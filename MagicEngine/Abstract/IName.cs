@@ -21,15 +21,13 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
+namespace MagicEngine.Abstract {
 	public interface IName {
-
-		[XmlAttribute("Name")]
+		[XmlAttribute ("Name")]
 		string Name {
 			get;
 			set;
 		}
-
 	}
 }
 

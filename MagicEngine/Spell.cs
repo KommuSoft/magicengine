@@ -20,30 +20,32 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
-
-	[XmlType("Spell")]
-	public class Spell : NameGuidBase {
-
+	[XmlType ("Spell")]
+	public class Spell : NameGuidableBase {
 		private int wavelength;
 
-		[XmlAttribute("DescriptiveName")]
+		[XmlAttribute ("DescriptiveName")]
 		public string DescriptiveName {
 			get;
 			set;
 		}
-		[XmlAttribute("Pronunciation")]
+
+		[XmlAttribute ("Pronunciation")]
 		public string Pronunciation {
 			get;
 			set;
 		}
-		[XmlAttribute("Description")]
+
+		[XmlAttribute ("Description")]
 		public string Description {
 			get;
 			set;
 		}
-		[XmlAttribute("Wavelength")]
+
+		[XmlAttribute ("Wavelength")]
 		public int Wavelength {
 			get {
 				return this.wavelength;
@@ -53,22 +55,24 @@ namespace MagicEngine.Information {
 			}
 		}
 
-		public Spell () : this("Unknown",580) {
+		public Spell () : this ("Unknown", 580) {
 		}
-		public Spell (string name, int wavelength) : base(name) {
+
+		public Spell (string name, int wavelength) : base (name) {
 			this.Wavelength = wavelength;
 		}
-		public Spell (string name, int wavelength, string pronunciation) : this(name,wavelength) {
+
+		public Spell (string name, int wavelength, string pronunciation) : this (name, wavelength) {
 			this.Pronunciation = pronunciation;
 		}
 
-		public Spell (string name, int wavelength, string pronunciation, string descriptiveName) : this(name,wavelength,pronunciation) {
+		public Spell (string name, int wavelength, string pronunciation, string descriptiveName) : this (name, wavelength, pronunciation) {
 			this.DescriptiveName = descriptiveName;
 		}
-		public Spell (string name, int wavelength, string pronunciation, string descriptiveName, string description) : this(name,wavelength,pronunciation,descriptiveName) {
+
+		public Spell (string name, int wavelength, string pronunciation, string descriptiveName, string description) : this (name, wavelength, pronunciation, descriptiveName) {
 			this.Description = description;
 		}
-
 	}
 }
 

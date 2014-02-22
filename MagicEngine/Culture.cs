@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
 	[XmlType ("Culture")]

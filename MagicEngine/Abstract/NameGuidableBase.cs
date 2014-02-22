@@ -2,7 +2,7 @@ using System;
 using System.Xml.Serialization;
 using MagicEngine.Information;
 
-namespace MagicEngine {
+namespace MagicEngine.Abstract {
 	public class NameGuidableBase : GuidableBase, IName {
 
 		#region IName implementation

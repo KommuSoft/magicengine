@@ -64,18 +64,18 @@
     <Compile Include="Unit.cs" />
     <Compile Include="UnitBase.cs" />
     <Compile Include="Resource.cs" />
-    <Compile Include="NameBase.cs" />
-    <Compile Include="IName.cs" />
     <Compile Include="NameGeneratorGroup.cs" />
     <Compile Include="ReplaceRegex.cs" />
     <Compile Include="TechnologyType.cs" />
     <Compile Include="Possession.cs" />
     <Compile Include="WorldLayer.cs" />
-    <Compile Include="GuidableBase.cs" />
-    <Compile Include="IGuidable.cs" />
-    <Compile Include="NameGuidableBase.cs" />
-    <Compile Include="IDescription.cs" />
-    <Compile Include="NameDescriptionGuidableBase.cs" />
+    <Compile Include="Abstract\GuidableBase.cs" />
+    <Compile Include="Abstract\IDescription.cs" />
+    <Compile Include="Abstract\IGuidable.cs" />
+    <Compile Include="Abstract\IName.cs" />
+    <Compile Include="Abstract\NameBase.cs" />
+    <Compile Include="Abstract\NameDescriptionGuidableBase.cs" />
+    <Compile Include="Abstract\NameGuidableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,5 +98,8 @@
       <Project>{CFEC60DC-14E0-47E4-A60E-8919FB5FEF5D}</Project>
       <Name>GraphVizWrapper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abstract\" />
   </ItemGroup>
 </Project>

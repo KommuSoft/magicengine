@@ -1,5 +1,5 @@
 //
-//  GuidBase.cs
+//  NameBase.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -21,29 +21,19 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine.Information {
-	public abstract class GuidableBase : IGuidable {
-		[XmlAttribute ("Guid")]
-		public Guid Guid {
+namespace MagicEngine.Abstract {
+	public class NameBase : IName {
+		[XmlAttribute ("Name")]
+		public string Name {
 			get;
 			set;
 		}
 
-		protected GuidableBase () {
-			this.Guid = Guid.NewGuid ();
+		public NameBase () {
 		}
 
-		protected GuidableBase (Guid guid) {
-			this.Guid = guid;
-		}
-
-		public override bool Equals (object obj) {
-			IGuidable other = obj as IGuidable;
-			return (other != null && this.Guid == other.Guid);
-		}
-
-		public override int GetHashCode () {
-			return this.Guid.GetHashCode ();
+		public NameBase (string name) {
+			this.Name = name;
 		}
 	}
 }
