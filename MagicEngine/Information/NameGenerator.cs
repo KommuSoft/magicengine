@@ -19,47 +19,81 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using System.Text;
 
 namespace MagicEngine.Information {
 	public static class NameGenerator {
-		private static readonly int FIRST_NAME_SYLLABLES_MIN = 1;
-		private static readonly int FIRST_NAME_SYLLABLES_MAX = 5;
-		private static readonly int LAST_NAME_SYLLABLES_MIN = 2;
-		private static readonly int LAST_NAME_SYLLABLES_MAX = 8;
-		private static readonly int TOTAL_NAME_SYLLABLES_MAX = 10;
-		private static readonly double CHANCE_FOR_EXTRA_SYLLABLE = 0.5;
-		private static readonly string[] SYLLABLES = {
+		private static readonly int FirstNameSyllablesMin = 1;
+		private static readonly int FirstNameSyllablesMax = 5;
+		private static readonly int LastNameSyllablesMin = 2;
+		private static readonly int LastNameSyllablesMax = 8;
+		private static readonly int TotalNameSyllablesMax = 10;
+		private static readonly double ChanceForExtraSyllable = 0.5d;
+		private static readonly string[] Syllables = {
 			"ar", "el", "thor", "hjal", "hu", "thur", "sac", "nor", "cam", "al", "wulf", "lot", "ba", "mar",
 			"du", "ge", "wo", "si", "da", "es", "vi", "ko", "lu", "bur", "fur", "gan", "gnus", "gus", "gnar",
 			"li", "lin", "lir", "mli", "nar", "nus", "rin", "ran", "sin", "sil", "sur"
 		};
-		private static readonly string[] OTHER_SYLLABLES = { "a", "e", "i", "o", "u", "y" };
-		private static readonly int MAX_OTHER_SYLLABLES_AT_ONCE = 2;
-		private static readonly string[] LAST_NAME_LAST_SYLLABLE = {"kor", "dor", "dan", "ran", "kar", "dwarf",
+		private static readonly string[] OtherSyllables = { "a", "e", "i", "o", "u", "y" };
+		private static readonly int MaxOtherSyllablesAtOnce = 2;
+		private static readonly string[] LastNameLastSyllable = {"kor", "dor", "dan", "ran", "kar", "dwarf",
 			"gar", "lot", "gon", "kan", "elf", "krad", "sac", "man", "thar", "thor", "gron", "sson", "wyr",
 			"sdale", "born"
 		};
-		private static readonly string[] EXTRA_SYLLABLE = { "de ", "de la ", "of ", "le ", "d'", "ir", "ar" };
+		private static readonly string[] ExtraSyllables = { "de ", "de la ", "of ", "le ", "d'", "ir", "ar" };
 
-		private string GenerateFirstName (int nbSyllablesFirst) {
-			string ret = "";
-			string[] localSyllables = new String[nbSyllablesFirst];
-			localSyllables [0] = Leader.SYLLABLES [Chance.randomInt (0, SYLLABLES.length - 1)];
-			int extrasUsed = 0;
-			for (int i = 1; i < localSyllables.length - 1; i++) {
-				if (extrasUsed == Leader.MAX_OTHER_SYLLABLES_AT_ONCE || Chance.succeeds (Leader.SYLLABLES.length / (Leader.EXTRA_SYLLABLE.length + Leader.SYLLABLES.length))) {
-					localSyllables [i] = Leader.getRandomElement (SYLLABLES);
-					extrasUsed = 0;
+		public static string GenerateFirstName (int nbSyllablesFirst) {
+			StringBuilder sb = new StringBuilder ();
+			sb.Append (ProbabilityUtils.RandomElement<string> (Syllables));
+			int extrasUsed = 0x00;
+			for (int i = 0x02; i < nbSyllablesFirst; i++) {
+				if (extrasUsed == MaxOtherSyllablesAtOnce || ProbabilityUtils.Chance (Syllables.Length / (ExtraSyllables.Length + Syllables.Length))) {
+					sb.Append (ProbabilityUtils.RandomElement<string> (Syllables));
+					extrasUsed = 0x00;
 				} else {
-					localSyllables [i] = Leader.getRandomElement (OTHER_SYLLABLES);
+					sb.Append (ProbabilityUtils.RandomElement<string> (OtherSyllables));
 					extrasUsed++;
 				}
 			}
-			localSyllables [localSyllables.length - 1] = Leader.SYLLABLES [Chance.randomInt (0, Leader.SYLLABLES.length - 1)];
-			foreach (string syllable in localSyllables) {
-				ret += syllable;
+			sb.Append (ProbabilityUtils.RandomElement<string> (Syllables));
+			return sb.ToString ();
+		}
+
+		public static string GenerateLastName (int nbSyllablesLast) {
+			StringBuilder sb = new StringBuilder ();
+			String[] localSyllables = new String[nbSyllablesLast];
+			sb.Append (ProbabilityUtils.RandomElement<string> (Syllables));
+			int extrasUsed = 0x00;
+			for (int i = 0x02; i < nbSyllablesLast; i++) {
+				if (extrasUsed == MaxOtherSyllablesAtOnce || ProbabilityUtils.Chance (Syllables.Length / (ExtraSyllables.Length + Syllables.Length))) {
+					sb.Append (ProbabilityUtils.RandomElement<string> (Syllables));
+					extrasUsed = 0x00;
+				} else {
+					sb.Append (ProbabilityUtils.RandomElement<string> (OtherSyllables));
+					extrasUsed++;
+				}
 			}
-			return ret;
+			sb.Append (ProbabilityUtils.RandomElement<string> (LastNameLastSyllable));
+			return sb.ToString ();
+		}
+
+		public static string GenerateExtraName () {
+			if (ProbabilityUtils.Chance (ChanceForExtraSyllable)) {
+				return ProbabilityUtils.RandomElement<string> (ExtraSyllables);
+			} else {
+				return string.Empty;
+			}
+		}
+
+		public static string GenerateName () {
+			StringBuilder sb = new StringBuilder ();
+			int nbSyllablesFirst = ProbabilityUtils.Next (LastNameSyllablesMin, LastNameSyllablesMax);
+			int nbSyllablesLast = ProbabilityUtils.Next (FirstNameSyllablesMin, Math.Min (FirstNameSyllablesMax, TotalNameSyllablesMax));
+			sb.Append (GenerateFirstName (nbSyllablesFirst));
+			sb.Append (' ');
+			sb.Append (GenerateExtraName ());
+			sb.Append (GenerateLastName (nbSyllablesLast));
+			return sb.ToString ();
 		}
 	}
 }

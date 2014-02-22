@@ -21,8 +21,23 @@
 using System;
 
 namespace MagicEngine {
-	public class ProbabilityUtils {
-		public ProbabilityUtils () {
+	public static class ProbabilityUtils {
+		private static readonly Random random = new Random ();
+
+		public static T RandomElement<T> (params T[] elements) {
+			if (elements != null) {
+				return elements [random.Next (elements.Length)];
+			} else {
+				return default(T);
+			}
+		}
+
+		public static bool Chance (double probability) {
+			return random.NextDouble () < probability;
+		}
+
+		public static int Next (int min, int max) {
+			return random.Next (min, max);
 		}
 	}
 }

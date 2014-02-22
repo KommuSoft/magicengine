@@ -100,6 +100,7 @@ namespace MagicEngine.UserInterface {
 		}
 
 		public static int Main (string[] args) {
+			Console.WriteLine (NameGenerator.GenerateName ());
 			return 0x00;
 		}
 	}
