@@ -43,6 +43,10 @@ namespace MagicEngine.Serialisation {
 		public SerializableImage (Image image) {
 			this.Bitmap = image;
 		}
+
+		public static implicit operator SerializableImage (Image img) {
+			return new SerializableImage (img);
+		}
 	}
 }
 

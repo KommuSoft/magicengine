@@ -100,11 +100,6 @@ namespace MagicEngine.UserInterface {
 
 		public static int Main (string[] args) {
 			GameInformation gi = new GameInformation ();
-			gi.Cultures.Add (new Culture ("Dombledores army"));
-			gi.Cultures.Add (new Culture ("Voldemorts army"));
-			gi.Cultures.Add (new Culture ("Ministry"));
-			gi.Cultures.Add (new Culture ("Giants"));
-			gi.Technologies.Add (new Technology ("Ollivanders Wand Shop"));
 			gi.WriteToFile ("gameinformation.gi");
 			using (MainGameWindow mgw = new MainGameWindow ()) {
 				mgw.Run ();

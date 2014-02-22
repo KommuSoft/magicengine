@@ -73,6 +73,34 @@ namespace MagicEngine.Information {
 		public Technology (Guid guid, string name, string description, SerializableImage img) : base (guid, name, description) {
 			this.Image = img;
 		}
+
+		public Technology (string name, params IGuidable[] sensitives) : base (name, sensitives) {
+		}
+
+		public Technology (Guid guid, string name, params IGuidable[] sensitives) : base (guid, name, sensitives) {
+		}
+
+		public Technology (string name, string description, params IGuidable[] sensitives) : base (name, description, sensitives) {
+		}
+
+		public Technology (Guid guid, string name, string description, params IGuidable[] sensitives) : base (guid, name, description, sensitives) {
+		}
+
+		public Technology (string name, SerializableImage img, params IGuidable[] sensitives) : base (name, sensitives) {
+			this.Image = img;
+		}
+
+		public Technology (Guid guid, string name, SerializableImage img, params IGuidable[] sensitives) : base (guid, name, sensitives) {
+			this.Image = img;
+		}
+
+		public Technology (string name, string description, SerializableImage img, params IGuidable[] sensitives) : base (name, description, sensitives) {
+			this.Image = img;
+		}
+
+		public Technology (Guid guid, string name, string description, SerializableImage img, params IGuidable[] sensitives) : base (guid, name, description, sensitives) {
+			this.Image = img;
+		}
 	}
 }
 
