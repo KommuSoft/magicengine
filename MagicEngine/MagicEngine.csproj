@@ -67,6 +67,7 @@
     <Compile Include="Information\NameGenerator.cs" />
     <Compile Include="Utils\ProbabilityUtils.cs" />
     <Compile Include="Information\Player.cs" />
+    <Compile Include="GameInformationMain.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
