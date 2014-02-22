@@ -41,6 +41,30 @@ namespace MagicEngine.Abstract {
 			this.SensitiveGuids = new HashSet<Guid> ();
 		}
 
+		protected NameDescriptionGuidableSensitiveBase (string name, params IGuidable[] sensitives) : this (name) {
+			foreach (IGuidable item in sensitives) {
+				this.SensitiveGuids.Add (item.Guid);
+			}
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (Guid guid, string name, params IGuidable[] sensitives) : this (guid, name) {
+			foreach (IGuidable item in sensitives) {
+				this.SensitiveGuids.Add (item.Guid);
+			}
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (string name, string description, params IGuidable[] sensitives) : this (name, description) {
+			foreach (IGuidable item in sensitives) {
+				this.SensitiveGuids.Add (item.Guid);
+			}
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (Guid guid, string name, string description, params IGuidable[] sensitives) : this (guid, name, description) {
+			foreach (IGuidable item in sensitives) {
+				this.SensitiveGuids.Add (item.Guid);
+			}
+		}
+
 		#region IGuidSensitive implementation
 
 		public bool SupportsGuid (Guid guid) {
