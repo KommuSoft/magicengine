@@ -22,7 +22,7 @@ using System;
 using System.Xml.Serialization;
 using MagicEngine.Abstract;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 	[XmlType ("Resource")]
 	public class Resource : NameDescriptionGuidableBase {
 		public Resource () : base () {
@@ -35,6 +35,12 @@ namespace MagicEngine {
 		}
 
 		public Resource (Guid guid, string name) : base (guid, name) {
+		}
+
+		public Resource (string name, string description) : base (name, description) {
+		}
+
+		public Resource (Guid guid, string name, string description) : base (guid, name, description) {
 		}
 	}
 }

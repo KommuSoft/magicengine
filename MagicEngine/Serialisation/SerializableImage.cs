@@ -13,7 +13,7 @@ namespace MagicEngine.Serialisation {
 			set;
 		}
 
-		[XmlIgnore]
+		[XmlAttribute("Data")]
 		public string TextualRepresentation {
 			get {
 				if (this.Bitmap != null) {
@@ -37,11 +37,14 @@ namespace MagicEngine.Serialisation {
 			}
 		}
 
-		public SerializableImage () : this (null) {
+		public SerializableImage () : this ((Image)null) {
 		}
 
 		public SerializableImage (Image image) {
 			this.Bitmap = image;
+		}
+
+		public SerializableImage (string filename) : this (new Bitmap (filename)) {
 		}
 
 		public static implicit operator SerializableImage (Image img) {

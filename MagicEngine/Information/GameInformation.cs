@@ -25,8 +25,10 @@ using System.Xml.Serialization;
 using MagicEngine.Utils;
 
 namespace MagicEngine.Information {
+
 	[XmlRoot ("GameInformation")]
 	public class GameInformation {
+
 		[XmlArray ("Cultures")]
 		[XmlArrayItem ("Culture")]
 		public List<Culture> Cultures {
@@ -37,6 +39,13 @@ namespace MagicEngine.Information {
 		[XmlArray ("Technologies")]
 		[XmlArrayItem ("Technology")]
 		public List<Technology> Technologies {
+			get;
+			set;
+		}
+
+		[XmlArray ("Resources")]
+		[XmlArrayItem ("Resource")]
+		public List<Resource> Resources {
 			get;
 			set;
 		}
@@ -61,5 +70,7 @@ namespace MagicEngine.Information {
 		public void WriteToFile (string filename) {
 			StreamUtils.WriteToFileCallBack (filename, this, StreamUtils.XmlSerialize<GameInformation>);
 		}
+
 	}
+
 }

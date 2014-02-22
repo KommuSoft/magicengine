@@ -10,7 +10,6 @@
     <RootNamespace>MagicEngine</RootNamespace>
     <AssemblyName>MagicEngine</AssemblyName>
     <StartupObject>MagicEngine.UserInterface.MainGameWindow</StartupObject>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,6 +66,7 @@
     <Compile Include="Abstract\IImage.cs" />
     <Compile Include="Information\NameGenerator.cs" />
     <Compile Include="Utils\ProbabilityUtils.cs" />
+    <Compile Include="Information\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

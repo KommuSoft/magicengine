@@ -26,6 +26,11 @@ namespace OrdinaryEngine {
 		public void TestSerialisationImage () {
 			XmlSerializer ser = new XmlSerializer (typeof(SerializableImage));
 		}
+
+		[Test ()]
+		public void TestResource () {
+			XmlSerializer ser = new XmlSerializer (typeof(Resource));
+		}
 	}
 }
 

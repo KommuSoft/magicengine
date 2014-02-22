@@ -25,6 +25,7 @@ using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using MagicEngine.Utils;
 using System.Drawing;
+using MagicEngine.Serialisation;
 
 namespace MagicEngine.UserInterface {
 	public class MainGameWindow : GameWindow {

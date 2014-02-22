@@ -22,7 +22,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace MagicEngine {
+namespace MagicEngine.Information {
 	public class ResourceCollection : IEnumerable<KeyValuePair<Guid,int>> {
 		private readonly Dictionary<Guid,int> mapping = new Dictionary<Guid,int> ();
 

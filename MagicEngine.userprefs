@@ -1,12 +1,13 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/MainGameWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="OrdinaryEngine/SerialisationTest.cs">
     <Files>
-      <File FileName="MagicEngine/Abstract/NameDescriptionGuidableSensitiveBase.cs" Line="36" Column="4" />
-      <File FileName="MagicEngine/Information/Technology.cs" Line="23" Column="33" />
-      <File FileName="MagicEngine/Abstract/NameDescriptionGuidableBase.cs" Line="12" Column="8" />
-      <File FileName="MagicEngine/MainGameWindow.cs" Line="98" Column="29" />
-      <File FileName="MagicEngine/Serialisation/SerializableImage.cs" Line="48" Column="37" />
+      <File FileName="MagicEngine/MainGameWindow.cs" Line="114" Column="39" />
+      <File FileName="MagicEngine/Serialisation/SerializableImage.cs" Line="16" Column="23" />
+      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="14" Column="3" />
+      <File FileName="MagicEngine/Information/Player.cs" Line="26" Column="55" />
+      <File FileName="MagicEngine/Information/Resource.cs" Line="33" Column="3" />
+      <File FileName="MagicEngine/Information/GameInformation.cs" Line="28" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
