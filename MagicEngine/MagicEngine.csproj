@@ -9,6 +9,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MagicEngine</RootNamespace>
     <AssemblyName>MagicEngine</AssemblyName>
+    <StartupObject>MagicEngine.UserInterface.MainGameWindow</StartupObject>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +22,11 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
+    <EnvironmentVariables>
+      <EnvironmentVariables>
+        <Variable name="LD_LIBRARY_PATH" value="/usr/lib/" />
+      </EnvironmentVariables>
+    </EnvironmentVariables>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -58,6 +65,8 @@
     <Compile Include="Serialisation\SerializableImage.cs" />
     <Compile Include="Rendering\SkpModelLoader.cs" />
     <Compile Include="Abstract\IImage.cs" />
+    <Compile Include="Information\NameGenerator.cs" />
+    <Compile Include="Utils\ProbabilityUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,13 +76,13 @@
     <Reference Include="OpenTK">
       <HintPath>lib\OpenTK.dll</HintPath>
     </Reference>
-    <Reference Include="System.Drawing" />
     <Reference Include="OpenTK.Compatibility">
       <HintPath>lib\OpenTK.Compatibility.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK.GLControl">
       <HintPath>lib\OpenTK.GLControl.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\graphviz-wrapper\src\GraphVizWrapper\GraphVizWrapper.csproj">

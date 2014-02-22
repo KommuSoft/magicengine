@@ -24,6 +24,7 @@ using MagicEngine.Information;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 using MagicEngine.Utils;
+using System.Drawing;
 
 namespace MagicEngine.UserInterface {
 	public class MainGameWindow : GameWindow {
@@ -99,11 +100,6 @@ namespace MagicEngine.UserInterface {
 		}
 
 		public static int Main (string[] args) {
-			GameInformation gi = new GameInformation ();
-			gi.WriteToFile ("gameinformation.gi");
-			using (MainGameWindow mgw = new MainGameWindow ()) {
-				mgw.Run ();
-			}
 			return 0x00;
 		}
 	}
