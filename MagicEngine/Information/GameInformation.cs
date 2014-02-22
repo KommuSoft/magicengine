@@ -41,6 +41,13 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		[XmlArray ("Resources")]
+		[XmlArrayItem ("Resource")]
+		public List<Resource> Resource {
+			get;
+			set;
+		}
+
 		public GameInformation () {
 			this.Cultures = new List<Culture> ();
 			this.Technology = new List<Technology> ();

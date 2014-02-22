@@ -18,28 +18,23 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+using System;
 using System.Xml.Serialization;
 using MagicEngine.Abstract;
 
 namespace MagicEngine {
-	public class Resource : NameBase {
-		private int id;
-
-		[XmlAttribute ("Id")]
-		public int Id {
-			get {
-				return this.id;
-			}
-			set {
-				this.id = value;
-			}
+	[XmlType ("Resource")]
+	public class Resource : NameDescriptionGuidableBase {
+		public Resource () : base () {
 		}
 
-		public Resource () {
+		public Resource (Guid guid) : base (guid) {
 		}
 
-		public Resource (int id, string name) : base (name) {
-			this.Id = id;
+		public Resource (string name) : base (name) {
+		}
+
+		public Resource (Guid guid, string name) : base (guid, name) {
 		}
 	}
 }
