@@ -37,6 +37,9 @@ namespace MagicEngine.Serialisation {
 			}
 		}
 
+		public SerializableImage () : this (null) {
+		}
+
 		public SerializableImage (Image image) {
 			this.Bitmap = image;
 		}
