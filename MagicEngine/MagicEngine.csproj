@@ -32,8 +32,6 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="GameInformation.cs" />
-    <Compile Include="Culture.cs" />
     <Compile Include="MainGameWindow.cs" />
     <Compile Include="ModelLoader.cs" />
     <Compile Include="SkpModelLoader.cs" />
@@ -44,7 +42,6 @@
     <Compile Include="ILoadableRenderable.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="SpellSkillProfile.cs" />
-    <Compile Include="Technology.cs" />
     <Compile Include="Building.cs" />
     <Compile Include="ITechnolable.cs" />
     <Compile Include="IResolvable.cs" />
@@ -77,7 +74,10 @@
     <Compile Include="Abstract\NameDescriptionGuidableBase.cs" />
     <Compile Include="Abstract\NameGuidableBase.cs" />
     <Compile Include="Abstract\ICultureSensitive.cs" />
-    <Compile Include="NameDescriptionCulturedGuidableBase.cs" />
+    <Compile Include="Abstract\NameDescriptionCulturedGuidableBase.cs" />
+    <Compile Include="Information\Culture.cs" />
+    <Compile Include="Information\GameInformation.cs" />
+    <Compile Include="Information\Technology.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -103,5 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstract\" />
+    <Folder Include="Information\" />
   </ItemGroup>
 </Project>
