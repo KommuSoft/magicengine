@@ -23,17 +23,16 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace MagicEngine {
-
-	public class ResourceCollection : IEnumerable<KeyValuePair<int,int>> {
-
-		private readonly Dictionary<int,int> mapping = new Dictionary<int,int> ();
+	public class ResourceCollection : IEnumerable<KeyValuePair<Guid,int>> {
+		private readonly Dictionary<Guid,int> mapping = new Dictionary<Guid,int> ();
 
 		public ResourceCollection () {
 
 		}
 
-		public void Add (int resourceindex, int value) {
+		public void Add (Resource resource, int value) {
 			if (value >= 0x00) {
+				Guid resourceindex = resource.Guid;
 				int ori;
 				if (this.mapping.TryGetValue (resourceindex, out ori)) {
 					this.mapping [resourceindex] = ori + value;
@@ -45,13 +44,31 @@ namespace MagicEngine {
 			}
 		}
 
-		public bool Sufficient (int resourceindex, int value) {
+		public void Add (Resource resource, int value) {
+			if (value >= 0x00) {
+				Guid resourceindex = resource.Guid;
+				int ori;
+				if (this.mapping.TryGetValue (resourceindex, out ori)) {
+					this.mapping [resourceindex] = ori + value;
+				} else {
+					this.mapping.Add (resourceindex, value);
+				}
+			} else {
+				throw new ArgumentException ("Cannot add a negative amount of resources!");
+			}
+		}
+
+		public bool Sufficient (Resource resource, int value) {
+			return this.Sufficient (resource.Guid, value);
+		}
+
+		public bool Sufficient (Guid resourceindex, int value) {
 			int ori;
 			return (this.mapping.TryGetValue (resourceindex, out ori) && ori >= value);
 		}
 
 		public bool Sufficient (ResourceCollection collection) {
-			foreach (KeyValuePair<int,int> kvp in collection) {
+			foreach (KeyValuePair<Guid,int> kvp in collection) {
 				if (!this.Sufficient (kvp.Key, kvp.Value)) {
 					return false;
 				}
@@ -59,7 +76,11 @@ namespace MagicEngine {
 			return true;
 		}
 
-		private void SubChecked (int resourceindex, int value) {
+		private void SubChecked (Resource resource, int value) {
+			this.SubChecked (resource.Guid, value);
+		}
+
+		private void SubChecked (Guid resourceindex, int value) {
 			int ori;
 			if (this.mapping.TryGetValue (resourceindex, out ori) && ori >= value) {
 				int newval = ori - value;
@@ -71,7 +92,11 @@ namespace MagicEngine {
 			}
 		}
 
-		public void Sub (int resourceindex, int value) {
+		public void Sub (Resource resource, int value) {
+			this.Sub (resource.Guid, value);
+		}
+
+		public void Sub (Guid resourceindex, int value) {
 			if (value >= 0x00) {
 				int ori;
 				if (this.mapping.TryGetValue (resourceindex, out ori) && ori >= value) {
@@ -89,7 +114,11 @@ namespace MagicEngine {
 			}
 		}
 
-		public int Value (int resourceindex) {
+		public int Value (Resource resource) {
+			return this.Value (resource.Guid);
+		}
+
+		public int Value (Guid resourceindex) {
 			int val;
 			if (this.mapping.TryGetValue (resourceindex, out val)) {
 				return val;
@@ -99,7 +128,7 @@ namespace MagicEngine {
 		}
 
 		public void Add (ResourceCollection collection) {
-			foreach (KeyValuePair<int,int> kvp in collection) {
+			foreach (KeyValuePair<Guid,int> kvp in collection) {
 				this.Add (kvp.Key, kvp.Value);
 			}
 		}
@@ -115,17 +144,20 @@ namespace MagicEngine {
 		}
 
 		#region IEnumerable implementation
+
 		System.Collections.IEnumerator IEnumerable.GetEnumerator () {
 			return this.GetEnumerator ();
 		}
+
 		#endregion
 
 		#region IEnumerable implementation
-		public IEnumerator<KeyValuePair<int, int>> GetEnumerator () {
+
+		public IEnumerator<KeyValuePair<Guid, int>> GetEnumerator () {
 			return this.mapping.GetEnumerator ();
 		}
-		#endregion
 
+		#endregion
 
 	}
 }

@@ -57,6 +57,7 @@
     <Compile Include="Information\ResourceCollection.cs" />
     <Compile Include="Serialisation\SerializableImage.cs" />
     <Compile Include="Rendering\SkpModelLoader.cs" />
+    <Compile Include="Abstract\IImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

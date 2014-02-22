@@ -25,7 +25,7 @@ using System.Drawing;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-	public class Technology : NameGuidableBase {
+	public class Technology : NameDescriptionGuidableSensitiveBase {
 		[XmlElement ("Image")]
 		public SerializableImage Image {
 			get;
