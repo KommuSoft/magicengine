@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  RenderElement.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,24 +19,21 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using System.Xml.Serialization;
+using OpenTK;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
+namespace MagicEngine.Rendering {
+	public class RenderElement {
+		private int vertexbuffer = -0x01;
+		private Vector3d[] pos;
+		private Vector3d[] nor;
+		private Vector2d[] tex;
+		private int[] idx;
 
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
-		}
-
-		public NameGeneratorGroup () {
+		public RenderElement (Vector3d[] pos, Vector3d[] nor, Vector2d[] tex, int[] idx) {
+			this.pos = pos;
+			this.nor = nor;
+			this.tex = tex;
+			this.idx = idx;
 		}
 	}
 }

@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  ModelLoader.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,24 +19,14 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using System.Xml.Serialization;
+using System.IO;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+namespace MagicEngine.Rendering {
+	public class ModelLoader {
+		public ModelLoader () {
 		}
 
-		public NameGeneratorGroup () {
+		public virtual void Load (Stream stream) {
 		}
 	}
 }

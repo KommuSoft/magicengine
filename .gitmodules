@@ -1,0 +1,3 @@
+[submodule "graphviz-wrapper"]
+	path = graphviz-wrapper
+	url = git@github.com:KommuSoft/GraphViz-C-Sharp-Wrapper.git

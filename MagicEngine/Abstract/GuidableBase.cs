@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  GuidBase.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -21,22 +21,29 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+namespace MagicEngine.Abstract {
+	public abstract class GuidableBase : IGuidable {
+		[XmlAttribute ("Guid")]
+		public Guid Guid {
+			get;
+			set;
 		}
 
-		public NameGeneratorGroup () {
+		protected GuidableBase () {
+			this.Guid = Guid.NewGuid ();
+		}
+
+		protected GuidableBase (Guid guid) {
+			this.Guid = guid;
+		}
+
+		public override bool Equals (object obj) {
+			IGuidable other = obj as IGuidable;
+			return (other != null && this.Guid == other.Guid);
+		}
+
+		public override int GetHashCode () {
+			return this.Guid.GetHashCode ();
 		}
 	}
 }

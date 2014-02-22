@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  Resource.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -20,23 +20,21 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using System.Xml.Serialization;
+using MagicEngine.Abstract;
 
 namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+	[XmlType ("Resource")]
+	public class Resource : NameDescriptionGuidableBase {
+		public Resource () : base () {
 		}
 
-		public NameGeneratorGroup () {
+		public Resource (Guid guid) : base (guid) {
+		}
+
+		public Resource (string name) : base (name) {
+		}
+
+		public Resource (Guid guid, string name) : base (guid, name) {
 		}
 	}
 }

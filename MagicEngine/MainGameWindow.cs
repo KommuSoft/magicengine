@@ -20,38 +20,22 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Diagnostics;
-using System.Threading;
-using System.IO;
 using MagicEngine.Information;
 using OpenTK;
-using OpenTK.Graphics;
-using OpenTK.Input;
-using OpenTK.Platform;
+using OpenTK.Graphics.OpenGL;
+using MagicEngine.Utils;
 
-/*using OOGL.Animation;
-using OOGL.Shaders;
-using OOGL.Textures;
-using OOGL;
-
-using OOGL.GUI;
-using OOGL.GUI.Abstract;
-using OOGL.GUI.VertexStructures;*/
 namespace MagicEngine.UserInterface {
 	public class MainGameWindow : GameWindow {
 		private Matrix4 perspective;
-		private double time = 0.0d;
-		/*private Model model;
-		private Controller controller;*/
+
 		public MainGameWindow () : base (800, 600) {
 			this.Title = "MagicEngine";
 		}
 
 		protected override void OnLoad (EventArgs e) {
 			this.OnResize (e);
-			GL.ClearColor (1.0f, 0.0f, 0.0f, 0.0f);
+			GL.ClearColor (0.0f, 0.0f, 0.0f, 0.0f);
 			GL.Enable (EnableCap.DepthTest);
 			GL.Enable (EnableCap.ColorMaterial);
 			GL.Enable (EnableCap.CullFace);
@@ -76,12 +60,6 @@ namespace MagicEngine.UserInterface {
 			GL.Enable (EnableCap.ColorMaterial);
 			GL.Enable (EnableCap.CullFace);
 
-			/*Ms3dLoader.File ms3dFile = new Ms3dLoader.File(ResourceLocator.GetFullPath("Models/Beta_Kamujin/Beta_Kamujin.ms3d"));
-			Sample[] tracks = Sample.Load(ResourceLocator.GetFullPath("Models/Beta_Kamujin/Beta_Kamujin.animations"));
-			ShaderProgram modelShader = new ShaderProgram(ResourceLocator.GetFullPath("Shaders/skeletalAnimation.vs"), ResourceLocator.GetFullPath("Shaders/skeletalAnimation.fs"));
-			this.model = ms3dFile.ToModel(modelShader, tracks);
-			ths.controller = new Controller(model);*/
-
 			base.OnLoad (e);
 		}
 
@@ -89,68 +67,20 @@ namespace MagicEngine.UserInterface {
 			base.OnRenderFrame (e);
 			GL.Clear (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 			GL.LoadIdentity ();
-			time += 30.0d * e.Time;
 			GL.Translate (0.0d, 0.0d, -3.0d);
-			//GL.Rotate(time, 0.0d, 1.0d, 0.0d);
-			//GL.Rotate(0.1d*time, 1.0d, 0.0d, 0.0d);
 			GL.Begin (BeginMode.Quads);
 			GL.Normal3 (0.0d, 0.0d, 1.0d);
 			uint c;
-			//GL.Color3(Color.Goldenrod);
 			double dx = 1.0d / 215.0d;
 			for (int i = 350, j = -215; i < 780; i++,j++) {
 				c = ColorUtils.FromWavelength (i);
 				GL.Color3 ((byte)(c >> 0x10), (byte)((c >> 0x08) & 0xff), (byte)(c & 0xff));
 				GL.Vertex3 (dx * j, -0.5d, 0.25d);
-				//ColorUtils.FromWavelength(i+1);
-				//GL.Color3(ref c);
 				GL.Vertex3 (dx * j + dx, -0.5d, 0.25d);
 				GL.Vertex3 (dx * j + dx, 0.5d, 0.25d);
-				//c = ColorUtils.FromWavelength(i);
-				//GL.Color3(ref c);
 				GL.Vertex3 (dx * j, 0.5d, 0.25d);
-			}//*/
-			/*double r = 0.25d;
-			double s = -0.25d;
-			GL.Color3(Color.Goldenrod);
-			GL.Normal3(0.0d, 0.0d, 1.0d);
-			GL.Vertex3(s, s, r);
-			GL.Vertex3(r, s, r);
-			GL.Vertex3(r, r, r);
-			GL.Vertex3(s, r, r);
-			GL.Color3(Color.CadetBlue);
-			GL.Normal3(0.0d, 1.0d, 0.0d);
-			GL.Vertex3(s, r, r);
-			GL.Vertex3(r, r, r);
-			GL.Vertex3(r, r, s);
-			GL.Vertex3(s, r, s);
-			GL.Color3(Color.BlueViolet);
-			GL.Normal3(1.0d, 0.0d, 0.0d);
-			GL.Vertex3(r, r, s);
-			GL.Vertex3(r, r, r);
-			GL.Vertex3(r, s, r);
-			GL.Vertex3(r, s, s);
-
-			GL.Color3(Color.DarkOliveGreen);
-			GL.Normal3(0.0d, 0.0d, -1.0d);
-			GL.Vertex3(s, r, s);
-			GL.Vertex3(r, r, s);
-			GL.Vertex3(r, s, s);
-			GL.Vertex3(s, s, s);
-			GL.Color3(Color.IndianRed);
-			GL.Normal3(0.0d, -1.0d, 0.0d);
-			GL.Vertex3(s, s, s);
-			GL.Vertex3(r, s, s);
-			GL.Vertex3(r, s, r);
-			GL.Vertex3(s, s, r);
-			GL.Color3(Color.PapayaWhip);
-			GL.Normal3(-1.0d, 0.0d, 0.0d);
-			GL.Vertex3(s, s, s);
-			GL.Vertex3(s, s, r);
-			GL.Vertex3(s, r, r);
-			GL.Vertex3(s, r, s);//*/
+			}
 			GL.End ();
-			/*model.Draw(controller, 0.025f, Matrix4.Rotate(Vector3.UnitY, Functions.PIF));*/
 			GL.Flush ();
 			this.SwapBuffers ();
 		}
@@ -169,52 +99,6 @@ namespace MagicEngine.UserInterface {
 		}
 
 		public static int Main (string[] args) {
-			GameInformation gi = new GameInformation ();
-
-			gi.Cultures.Add (new Culture ("The Three Friends"));
-			gi.Cultures.Add (new Culture ("Order of the Phoenix"));
-			gi.Cultures.Add (new Culture ("Voldemorts Army"));
-			gi.Cultures.Add (new Culture ("Snatchers"));
-			gi.Cultures.Add (new Culture ("Giants"));
-			gi.Cultures.Add (new Culture ("Dombledores army"));
-
-			gi.Resources.Add (new Resource (0x00, "Knuts"));
-			gi.Resources.Add (new Resource (0x01, "Chocolate Frog"));
-
-			gi.Technology.Add (new Technology ("Wizarding house", TechnologyType.Building));
-			gi.Technology.Add (new Technology ("Quidditch Pit", TechnologyType.Building));
-			gi.Technology.Add (new Technology ("Wizarding School", TechnologyType.Building));
-			gi.Technology.Add (new Technology ("Wizarding Bank", TechnologyType.Building));
-			gi.Technology.Add (new Technology ("Wizarding Inn", TechnologyType.Building));
-			gi.Technology.Add (new Technology ("Wizard", TechnologyType.Unit));
-			gi.Technology.Add (new Technology ("Witch", TechnologyType.Unit));
-			gi.Technology.Add (new Technology ("Harry Potter", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Hermion Granger", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Ronald Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Arthur Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Molley Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("William Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Charlie Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Fred Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("George Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Ginny Weasley", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Luna Lovegood", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Tom Riddle", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Neveille Longbottom", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Lucius Malfoy", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Bellatrix Lestrange", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Sirius Black", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("James Potter", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Lily Potter", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Alastor Moody", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Dorothea Tonks", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Remus Lupin", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Severus Snape", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Peter Pittigrew", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Pius Thickness", TechnologyType.Hero));
-			gi.Technology.Add (new Technology ("Albus Dombledore", TechnologyType.Hero));
-
-			gi.WriteToFile ("gameinformation.gi");
 			using (MainGameWindow mgw = new MainGameWindow ()) {
 				mgw.Run ();
 			}

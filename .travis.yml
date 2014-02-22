@@ -1,0 +1,11 @@
+language: c
+
+git:
+  submodules: false
+ 
+install:
+  - sudo apt-get install mono-devel mono-gmcs nunit-console
+ 
+script:
+  - xbuild CI.proj
+  - nunit-console OrdinaryEngine/bin/Debug/OrdinaryEngine.dll

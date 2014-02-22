@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  NameBase.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -21,22 +21,19 @@
 using System;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+namespace MagicEngine.Abstract {
+	public class NameBase : IName {
+		[XmlAttribute ("Name")]
+		public string Name {
+			get;
+			set;
 		}
 
-		public NameGeneratorGroup () {
+		public NameBase () {
+		}
+
+		public NameBase (string name) {
+			this.Name = name;
 		}
 	}
 }

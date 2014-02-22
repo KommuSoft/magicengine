@@ -4,9 +4,12 @@
 *.swp
 *.bak
 
+ignore/*
+
 #Binaries
 */bin/*
 */obj/*
 *.exe
 *.dll
-
+*.mdb
+*.xml

@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  SkpModelLoader.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,25 +19,16 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using System.Xml.Serialization;
+using System.IO;
+using System.IO.Compression;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+namespace MagicEngine.Rendering {
+	public class SkpModelLoader : ModelLoader {
+		public SkpModelLoader () {
 		}
 
-		public NameGeneratorGroup () {
+		public override void Load (Stream stream) {
+			GZipStream gzs = new GZipStream (stream, CompressionMode.Decompress);
 		}
 	}
 }
-

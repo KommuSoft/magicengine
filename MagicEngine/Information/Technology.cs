@@ -1,5 +1,5 @@
 //
-//  NameGeneratorGroup.cs
+//  Technology.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,24 +19,34 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
+using MagicEngine.Abstract;
+using MagicEngine.Serialisation;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
-	public class NameGeneratorGroup {
-		private string[] namebase;
-
-		[XmlArray ("Namebase")]
-		[XmlArrayItem ("NameBaseItem")]
-		public string[] Namebase {
-			get {
-				return this.namebase;
-			}
-			set {
-				this.namebase = value;
-			}
+namespace MagicEngine.Information {
+	public class Technology : NameDescriptionGuidableSensitiveBase, IImage {
+		[XmlElement ("Image")]
+		public SerializableImage Image {
+			get;
+			set;
 		}
 
-		public NameGeneratorGroup () {
+		public Technology () : base () {
+		}
+
+		public Technology (Guid guid) : base (guid) {
+		}
+
+		public Technology (string name) : base (name) {
+		}
+
+		public Technology (Guid guid, string name) : base (guid, name) {
+		}
+
+		public Technology (string name, string description) : base (name, description) {
+		}
+
+		public Technology (Guid guid, string name, string description) : base (guid, name, description) {
 		}
 	}
 }
