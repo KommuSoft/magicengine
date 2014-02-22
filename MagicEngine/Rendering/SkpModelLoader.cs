@@ -22,16 +22,13 @@ using System;
 using System.IO;
 using System.IO.Compression;
 
-namespace MagicEngine {
-
+namespace MagicEngine.Rendering {
 	public class SkpModelLoader : ModelLoader {
-
 		public SkpModelLoader () {
 		}
 
 		public override void Load (Stream stream) {
-			GZipStream gzs = new GZipStream(stream, CompressionMode.Decompress);
+			GZipStream gzs = new GZipStream (stream, CompressionMode.Decompress);
 		}
-
 	}
 }

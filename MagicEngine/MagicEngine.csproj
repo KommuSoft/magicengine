@@ -33,7 +33,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Compile Include="MainGameWindow.cs" />
-    <Compile Include="SkpModelLoader.cs" />
     <Compile Include="Abstract\GuidableBase.cs" />
     <Compile Include="Abstract\IDescription.cs" />
     <Compile Include="Abstract\IGuidable.cs" />
@@ -56,6 +55,8 @@
     <Compile Include="Rendering\RenderElement.cs" />
     <Compile Include="Information\Resource.cs" />
     <Compile Include="Information\ResourceCollection.cs" />
+    <Compile Include="Serialisation\SerializableImage.cs" />
+    <Compile Include="Rendering\SkpModelLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
