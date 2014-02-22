@@ -90,7 +90,7 @@ namespace MagicEngine.UserInterface {
 			int h = this.Height;
 			double ratio = (double)w / h;
 			GL.MatrixMode (MatrixMode.Projection);
-			this.perspective = Matrix4.Perspective ((float)(Math.PI / 3.0d), (float)ratio, 1.0f, 1000.0f);
+			this.perspective = Matrix4.CreatePerspectiveFieldOfView ((float)(Math.PI / 3.0d), (float)ratio, 1.0f, 1000.0f);
 			GL.LoadIdentity ();
 			GL.MultMatrix (ref perspective);
 			GL.MatrixMode (MatrixMode.Modelview);

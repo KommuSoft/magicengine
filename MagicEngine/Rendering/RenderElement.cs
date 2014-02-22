@@ -23,17 +23,7 @@ using OpenTK;
 
 namespace MagicEngine.Rendering {
 	public class RenderElement {
-		private int vertexbuffer = -0x01;
-		private Vector3d[] pos;
-		private Vector3d[] nor;
-		private Vector2d[] tex;
-		private int[] idx;
-
-		public RenderElement (Vector3d[] pos, Vector3d[] nor, Vector2d[] tex, int[] idx) {
-			this.pos = pos;
-			this.nor = nor;
-			this.tex = tex;
-			this.idx = idx;
+		public RenderElement () {
 		}
 	}
 }

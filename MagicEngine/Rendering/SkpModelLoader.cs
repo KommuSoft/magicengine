@@ -28,7 +28,7 @@ namespace MagicEngine.Rendering {
 		}
 
 		public override void Load (Stream stream) {
-			GZipStream gzs = new GZipStream (stream, CompressionMode.Decompress);
+
 		}
 	}
 }
