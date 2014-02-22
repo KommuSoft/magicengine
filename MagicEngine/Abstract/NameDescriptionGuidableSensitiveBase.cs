@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using MagicEngine.Information;
 
 namespace MagicEngine.Abstract {
-	public class NameDescriptionGuidableSensitiveBase : NameDescriptionGuidableBase, IGuidSensitive {
+	public abstract class NameDescriptionGuidableSensitiveBase : NameDescriptionGuidableBase, IGuidSensitive {
 
 		#region IGuidSensitive implementation
 
@@ -17,7 +17,22 @@ namespace MagicEngine.Abstract {
 
 		#endregion
 
-		public NameDescriptionGuidableSensitiveBase () {
+		protected NameDescriptionGuidableSensitiveBase () : base () {
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (Guid guid) : base (guid) {
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (string name) : base (name) {
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (Guid guid, string name) : base (guid, name) {
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (string name, string description) : base (name, description) {
+		}
+
+		protected NameDescriptionGuidableSensitiveBase (Guid guid, string name, string description) : base (guid, name, description) {
 		}
 
 		#region IGuidSensitive implementation

@@ -21,27 +21,32 @@
 using System;
 using MagicEngine.Abstract;
 using MagicEngine.Serialisation;
-using System.Drawing;
 using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
-	public class Technology : NameDescriptionGuidableSensitiveBase {
+	public class Technology : NameDescriptionGuidableSensitiveBase, IImage {
 		[XmlElement ("Image")]
 		public SerializableImage Image {
 			get;
 			set;
 		}
 
-		protected Technology () : base () {
+		public Technology () : base () {
 		}
 
-		protected Technology (Guid guid) : base (guid) {
+		public Technology (Guid guid) : base (guid) {
 		}
 
-		protected Technology (string name) : base (name) {
+		public Technology (string name) : base (name) {
 		}
 
-		protected Technology (Guid guid, string name) : base (guid, name) {
+		public Technology (Guid guid, string name) : base (guid, name) {
+		}
+
+		public Technology (string name, string description) : base (name, description) {
+		}
+
+		public Technology (Guid guid, string name, string description) : base (guid, name, description) {
 		}
 	}
 }

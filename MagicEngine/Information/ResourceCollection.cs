@@ -31,22 +31,11 @@ namespace MagicEngine {
 		}
 
 		public void Add (Resource resource, int value) {
-			if (value >= 0x00) {
-				Guid resourceindex = resource.Guid;
-				int ori;
-				if (this.mapping.TryGetValue (resourceindex, out ori)) {
-					this.mapping [resourceindex] = ori + value;
-				} else {
-					this.mapping.Add (resourceindex, value);
-				}
-			} else {
-				throw new ArgumentException ("Cannot add a negative amount of resources!");
-			}
+			this.Add (resource.Guid, value);
 		}
 
-		public void Add (Resource resource, int value) {
+		public void Add (Guid resourceindex, int value) {
 			if (value >= 0x00) {
-				Guid resourceindex = resource.Guid;
 				int ori;
 				if (this.mapping.TryGetValue (resourceindex, out ori)) {
 					this.mapping [resourceindex] = ori + value;
@@ -135,7 +124,7 @@ namespace MagicEngine {
 
 		public void Sub (ResourceCollection resourcecollection) {
 			if (this.Sufficient (resourcecollection)) {
-				foreach (KeyValuePair<int,int> kvp in resourcecollection) {
+				foreach (KeyValuePair<Guid,int> kvp in resourcecollection) {
 					this.SubChecked (kvp.Key, kvp.Value);
 				}
 			} else {
