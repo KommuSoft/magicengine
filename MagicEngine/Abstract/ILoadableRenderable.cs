@@ -1,5 +1,5 @@
 //
-//  ReplaceRegex.cs
+//  ILoadableRenderable.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,49 +19,9 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using System.Text.RegularExpressions;
-using System.Xml.Serialization;
 
-namespace MagicEngine {
-
-	[XmlType("ReplaceRegex")]
-	public class ReplaceRegex {
-
-		private string source;
-		private string drain;
-
-		[XmlAttribute("Source")]
-		public string Source {
-			get {
-				return this.source;
-			}
-			set {
-				this.source = value;
-			}
-		}
-
-		[XmlAttribute("Drain")]
-		public string Drain {
-			get {
-				return this.drain;
-			}
-			set {
-				this.drain = value;
-			}
-		}
-
-		public ReplaceRegex () {
-		}
-
-		public ReplaceRegex (string source, string drain) {
-			this.Source = source;
-			this.Drain = drain;
-		}
-
-		public string Replace (string input) {
-			return Regex.Replace (input, source, drain);
-		}
-
+namespace MagicEngine.Abstract {
+	public interface ILoadableRenderable : ILoadable, IRenderable {
 	}
 }
 

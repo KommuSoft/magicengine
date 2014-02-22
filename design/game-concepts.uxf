@@ -225,11 +225,11 @@ NameDescriptionGuidableBase
       <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
-NameDescriptionCulturedGuidableBase
+NameDescriptionGuidableSensitiveBase
 --
-+ Cultures : ICollection&lt;Guid&gt; {gs}
++ SensitveGuids : ICollection&lt;Guid&gt; {gs}
 --
-+ SupportsCulture (culture : Culture) : bool</panel_attributes>
++ supportsGuid (guid : Guid) : bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

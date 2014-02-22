@@ -19,12 +19,10 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using OpenTK.Math;
+using OpenTK;
 
 namespace MagicEngine {
-
 	public class RenderElement {
-
 		private int vertexbuffer = -0x01;
 		private Vector3d[] pos;
 		private Vector3d[] nor;
@@ -37,7 +35,6 @@ namespace MagicEngine {
 			this.tex = tex;
 			this.idx = idx;
 		}
-
 	}
 }
 

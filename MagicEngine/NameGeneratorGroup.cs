@@ -23,12 +23,10 @@ using System.Xml.Serialization;
 
 namespace MagicEngine {
 	public class NameGeneratorGroup {
-
 		private string[] namebase;
-		private ReplaceRegex[] replaces;
 
-		[XmlArray("Namebase")]
-		[XmlArrayItem("NameBaseItem")]
+		[XmlArray ("Namebase")]
+		[XmlArrayItem ("NameBaseItem")]
 		public string[] Namebase {
 			get {
 				return this.namebase;
@@ -38,20 +36,8 @@ namespace MagicEngine {
 			}
 		}
 
-		[XmlArray("Replaces")]
-		[XmlArrayItem("ReplaceItem")]
-		public ReplaceRegex[] Replaces {
-			get {
-				return this.replaces;
-			}
-			set {
-				this.replaces = value;
-			}
-		}
-
 		public NameGeneratorGroup () {
 		}
-
 	}
 }
 

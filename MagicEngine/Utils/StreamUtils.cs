@@ -22,31 +22,30 @@ using System;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace MagicEngine {
-
-	public static class Utils {
-
+namespace MagicEngine.Utils {
+	public static class StreamUtils {
 		public static T ReadFromFileCallBack<T> (string filename, Func<Stream,T> callback) {
-			FileStream fs = File.Open(filename, FileMode.Open, FileAccess.Read);
-			T result = callback(fs);
-			fs.Close();
+			FileStream fs = File.Open (filename, FileMode.Open, FileAccess.Read);
+			T result = callback (fs);
+			fs.Close ();
 			return result;
 		}
+
 		public static void WriteToFileCallBack<T> (string filename, T val, Action<Stream,T> callback) {
-			FileStream fs = File.Open(filename, FileMode.Create, FileAccess.Write);
-			callback(fs, val);
-			fs.Close();
+			FileStream fs = File.Open (filename, FileMode.Create, FileAccess.Write);
+			callback (fs, val);
+			fs.Close ();
 		}
+
 		public static T XmlDeserialize<T> (Stream s) {
-			XmlSerializer ser = new XmlSerializer(typeof(T));
-			return (T)ser.Deserialize(s);
+			XmlSerializer ser = new XmlSerializer (typeof(T));
+			return (T)ser.Deserialize (s);
 		}
+
 		public static void XmlSerialize<T> (Stream s, T val) {
-			XmlSerializer ser = new XmlSerializer(typeof(T));
-			ser.Serialize(s, val);
+			XmlSerializer ser = new XmlSerializer (typeof(T));
+			ser.Serialize (s, val);
 		}
-
 	}
-
 }
 

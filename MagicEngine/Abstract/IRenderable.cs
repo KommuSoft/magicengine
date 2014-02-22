@@ -1,5 +1,5 @@
 //
-//  ISatisfiedWithSet.cs
+//  IRenderable.cs
 //
 //  Author:
 //       Willem Van Onsem <vanonsem.willem@gmail.com>
@@ -19,14 +19,10 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
-using System.Collections.Generic;
+using OpenTK;
 
-namespace MagicEngine.Information {
-
-	public interface ISatisfiedWithSet<T> {
-
-		bool SatisfiedWithSet (ICollection<T> collection);
-
+namespace MagicEngine.Abstract {
+	public interface IRenderable {
+		void OnRenderFrame (FrameEventArgs e);
 	}
 }
-

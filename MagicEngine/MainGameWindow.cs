@@ -22,7 +22,8 @@
 using System;
 using MagicEngine.Information;
 using OpenTK;
-using OpenTK.Graphics;
+using OpenTK.Graphics.OpenGL;
+using MagicEngine.Utils;
 
 namespace MagicEngine.UserInterface {
 	public class MainGameWindow : GameWindow {

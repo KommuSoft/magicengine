@@ -35,34 +35,12 @@
     <Compile Include="MainGameWindow.cs" />
     <Compile Include="ModelLoader.cs" />
     <Compile Include="SkpModelLoader.cs" />
-    <Compile Include="IRenderable.cs" />
     <Compile Include="ModelGenerators.cs" />
     <Compile Include="RenderElement.cs" />
-    <Compile Include="ILoadable.cs" />
-    <Compile Include="ILoadableRenderable.cs" />
-    <Compile Include="Spell.cs" />
-    <Compile Include="SpellSkillProfile.cs" />
-    <Compile Include="Building.cs" />
-    <Compile Include="ITechnolable.cs" />
-    <Compile Include="IResolvable.cs" />
-    <Compile Include="ColorUtils.cs" />
-    <Compile Include="Utils.cs" />
-    <Compile Include="AndFormula.cs" />
-    <Compile Include="ISatisfiedWithSet.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="GaussianFunction.cs" />
-    <Compile Include="Maths.cs" />
     <Compile Include="ResourceCollection.cs" />
-    <Compile Include="AssemblyLine.cs" />
     <Compile Include="NameGenerator.cs" />
-    <Compile Include="Sex.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="UnitBase.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="NameGeneratorGroup.cs" />
-    <Compile Include="ReplaceRegex.cs" />
-    <Compile Include="Possession.cs" />
-    <Compile Include="WorldLayer.cs" />
     <Compile Include="Abstract\GuidableBase.cs" />
     <Compile Include="Abstract\IDescription.cs" />
     <Compile Include="Abstract\IGuidable.cs" />
@@ -75,6 +53,11 @@
     <Compile Include="Information\Technology.cs" />
     <Compile Include="Abstract\IGuidSensitive.cs" />
     <Compile Include="Abstract\NameDescriptionGuidableSensitiveBase.cs" />
+    <Compile Include="Utils\StreamUtils.cs" />
+    <Compile Include="Utils\ColorUtils.cs" />
+    <Compile Include="Abstract\ILoadable.cs" />
+    <Compile Include="Abstract\ILoadableRenderable.cs" />
+    <Compile Include="Abstract\IRenderable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -101,5 +84,6 @@
   <ItemGroup>
     <Folder Include="Abstract\" />
     <Folder Include="Information\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 </Project>
