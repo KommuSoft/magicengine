@@ -20,9 +20,18 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 using System;
 using MagicEngine.Abstract;
+using MagicEngine.Serialisation;
+using System.Drawing;
+using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
 	public class Technology : NameGuidableBase {
+		[XmlElement ("Image")]
+		public SerializableImage Image {
+			get;
+			set;
+		}
+
 		protected Technology () : base () {
 		}
 

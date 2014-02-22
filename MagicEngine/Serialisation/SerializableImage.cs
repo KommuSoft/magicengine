@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using System.Drawing.Imaging;
 
 namespace MagicEngine.Serialisation {
+	[XmlType ("SerializableImage")]
 	public class SerializableImage {
 		[XmlIgnore]
 		public Image Bitmap {
