@@ -76,6 +76,8 @@
     <Compile Include="Abstract\NameBase.cs" />
     <Compile Include="Abstract\NameDescriptionGuidableBase.cs" />
     <Compile Include="Abstract\NameGuidableBase.cs" />
+    <Compile Include="Abstract\ICultureSensitive.cs" />
+    <Compile Include="NameDescriptionCulturedGuidableBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
