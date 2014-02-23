@@ -68,6 +68,8 @@
     <Compile Include="Utils\ProbabilityUtils.cs" />
     <Compile Include="Information\Player.cs" />
     <Compile Include="GameInformationMain.cs" />
+    <Compile Include="Information\Building.cs" />
+    <Compile Include="Information\AssemblyLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

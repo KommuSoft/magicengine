@@ -5,6 +5,7 @@
 *.bak
 
 ignore/*
+MagicEngine/GameInformationMain.cs
 
 #Binaries
 */bin/*

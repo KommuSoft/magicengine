@@ -21,8 +21,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace MagicEngine.Information {
+
+	[XmlType()]
 	public class ResourceCollection : IEnumerable<KeyValuePair<Guid,int>> {
 		private readonly Dictionary<Guid,int> mapping = new Dictionary<Guid,int> ();
 
