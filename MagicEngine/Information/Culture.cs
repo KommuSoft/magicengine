@@ -25,7 +25,7 @@ using MagicEngine.Abstract;
 
 namespace MagicEngine.Information {
 	[XmlType ("Culture")]
-	public class Culture : NameGuidableBase {
+	public class Culture : NameDescriptionGuidableBase {
 		public Culture () : base () {
 		}
 
@@ -36,6 +36,12 @@ namespace MagicEngine.Information {
 		}
 
 		public Culture (Guid guid, string name) : base (guid, name) {
+		}
+
+		public Culture (string name, string description) : base (name,description) {
+		}
+
+		public Culture (Guid guid, string name,string description) : base (guid, name,description) {
 		}
 	}
 }
