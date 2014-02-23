@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>MagicEngine</RootNamespace>
     <AssemblyName>MagicEngine</AssemblyName>
-    <StartupObject>MagicEngine.UserInterface.MainGameWindow</StartupObject>
+    <StartupObject>MagicEngine.GameInformationMain</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>

@@ -50,9 +50,18 @@ namespace MagicEngine.Information {
 			set;
 		}
 
+		[XmlArray ("AssemblyLines")]
+		[XmlArrayItem ("AssemblyLine")]
+		public List<AssemblyLine> AssemblyLines {
+			get;
+			set;
+		}
+
 		public GameInformation () {
 			this.Cultures = new List<Culture> ();
 			this.Technologies = new List<Technology> ();
+			this.Resources = new List<Resource>();
+			this.AssemblyLines = new List<AssemblyLine>();
 		}
 
 		public static GameInformation ReadFromFile (string filename) {

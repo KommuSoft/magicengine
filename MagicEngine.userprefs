@@ -2,13 +2,31 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="OrdinaryEngine/SerialisationTest.cs">
     <Files>
-      <File FileName="MagicEngine/MainGameWindow.cs" Line="114" Column="39" />
-      <File FileName="MagicEngine/Serialisation/SerializableImage.cs" Line="16" Column="23" />
-      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="14" Column="3" />
-      <File FileName="MagicEngine/Information/Player.cs" Line="26" Column="55" />
-      <File FileName="MagicEngine/Information/Resource.cs" Line="33" Column="3" />
-      <File FileName="MagicEngine/Information/GameInformation.cs" Line="28" Column="2" />
+      <File FileName="MagicEngine/Information/AssemblyLine.cs" Line="30" Column="17" />
+      <File FileName="MagicEngine/Information/Resource.cs" Line="25" Column="34" />
+      <File FileName="MagicEngine/GameInformationMain.cs" Line="25" Column="27" />
+      <File FileName="MagicEngine/Information/ResourceCollection.cs" Line="46" Column="35" />
+      <File FileName="MagicEngine/Information/GameInformation.cs" Line="64" Column="50" />
+      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="9" Column="21" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="OrdinaryEngine" expanded="True">
+            <Node name="SerialisationTest.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
