@@ -1,20 +1,23 @@
 ﻿<Properties GitUserInfo="UsingMD">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="OrdinaryEngine/SerialisationTest.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/GameInformationMain.cs">
     <Files>
       <File FileName="MagicEngine/Information/AssemblyLine.cs" Line="30" Column="17" />
       <File FileName="MagicEngine/Information/Resource.cs" Line="25" Column="34" />
-      <File FileName="MagicEngine/GameInformationMain.cs" Line="25" Column="27" />
-      <File FileName="MagicEngine/Information/ResourceCollection.cs" Line="46" Column="35" />
+      <File FileName="MagicEngine/GameInformationMain.cs" Line="5" Column="22" />
+      <File FileName="MagicEngine/Information/ResourceCollection.cs" Line="60" Column="12" />
       <File FileName="MagicEngine/Information/GameInformation.cs" Line="64" Column="50" />
-      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="9" Column="21" />
+      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="10" Column="12" />
+      <File FileName="MagicEngine/MainGameWindow.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="OrdinaryEngine" expanded="True">
-            <Node name="SerialisationTest.cs" selected="True" />
+          <Node name="MagicEngine" expanded="True">
+            <Node name="Information" expanded="True" />
+            <Node name="GameInformationMain.cs" selected="True" />
           </Node>
+          <Node name="OrdinaryEngine" expanded="True" />
         </State>
       </Pad>
       <Pad Id="ClassPad">
@@ -22,6 +25,9 @@
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
+      </Pad>
+      <Pad Id="ConnectionManagerPad">
+        <State selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.NUnit.TestPad">
         <State expanded="True" selected="True" />
