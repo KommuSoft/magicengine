@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MagicEngine/GameInformationMain.cs">
     <Files>
-      <File FileName="MagicEngine/Information/AssemblyLine.cs" Line="30" Column="17" />
-      <File FileName="MagicEngine/Information/Resource.cs" Line="25" Column="34" />
-      <File FileName="MagicEngine/GameInformationMain.cs" Line="5" Column="22" />
-      <File FileName="MagicEngine/Information/ResourceCollection.cs" Line="60" Column="12" />
-      <File FileName="MagicEngine/Information/GameInformation.cs" Line="64" Column="50" />
-      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="10" Column="12" />
+      <File FileName="MagicEngine/Information/AssemblyLine.cs" Line="1" Column="1" />
+      <File FileName="MagicEngine/Information/Resource.cs" Line="1" Column="1" />
+      <File FileName="MagicEngine/GameInformationMain.cs" Line="21" Column="40" />
+      <File FileName="MagicEngine/Information/ResourceCollection.cs" Line="1" Column="1" />
+      <File FileName="MagicEngine/Information/GameInformation.cs" Line="1" Column="1" />
+      <File FileName="OrdinaryEngine/SerialisationTest.cs" Line="1" Column="1" />
       <File FileName="MagicEngine/MainGameWindow.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -23,14 +23,14 @@
       <Pad Id="ClassPad">
         <State expanded="True" selected="True" />
       </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True" />
+      </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
       </Pad>
       <Pad Id="ConnectionManagerPad">
         <State selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
